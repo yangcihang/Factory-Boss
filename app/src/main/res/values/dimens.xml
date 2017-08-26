@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 通用尺寸 -->
+    <dimen name="title_text">18sp</dimen>
+    <dimen name="primary_text">16sp</dimen>
+    <dimen name="secondary_text">14sp</dimen>
+    <dimen name="ternary_text">12sp</dimen>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Transparent-Factory</string>
+    <string name="toast_net_work_error">网络错误</string>
+    <string name="toast_unknow_error">未知错误</string>
+</resources>

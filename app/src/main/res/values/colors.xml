@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--通用颜色-->
+    <color name="primary">#3eb7f3</color>
+    <color name="primary_dark">#0288d1</color>
+    <color name="primary_light">#b3e5fc</color>
+    <color name="accent">#0082ec</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    //分割线
+    <color name="divider">#dedede</color>
+    //字体颜色
+    <color name="primary_text">#4a4a4a</color>
+    <color name="secondary_text">#9b9b9b</color>
+    <color name="red_warning">#ff3553</color>
+</resources>
