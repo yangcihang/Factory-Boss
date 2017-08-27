@@ -5,4 +5,11 @@
     <dimen name="primary_text">16sp</dimen>
     <dimen name="secondary_text">14sp</dimen>
     <dimen name="ternary_text">12sp</dimen>
+
+    <dimen name="tab_height">48dp</dimen>
+
+    <dimen name="padding_left_right">16dp</dimen>
+    <dimen name="padding_height_bottom">8dp</dimen>
+    <dimen name="tab_icon_width">24dp</dimen>
+    <dimen name="tab_icon_height">24dp</dimen>
 </resources>

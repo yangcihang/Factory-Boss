@@ -76,35 +76,35 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected abstract void loadData();
 
-    /**
-     * 添加Fragment
-     *
-     * @param fragment fragment
-     * @param bundle   传递的数据
-     */
-    protected void addFragment(@IdRes int containerViewId, BaseFragment fragment, Bundle bundle) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        if (bundle != null) {
-            fragment.setArguments(bundle);
-        }
-        fragmentTransaction.add(containerViewId, fragment).commit();
-    }
-
-    /**
-     * 替换Fragment
-     *
-     * @param fragment fragment
-     * @param bundle   传递的数据
-     */
-    protected void replaceFragment(@IdRes int containerViewId, BaseFragment fragment, Bundle bundle) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        if (bundle != null) {
-            fragment.setArguments(bundle);
-        }
-        fragmentTransaction.replace(containerViewId, fragment).addToBackStack(null).commit();
-    }
+//    /**
+//     * 添加Fragment
+//     *
+//     * @param fragment fragment
+//     * @param bundle   传递的数据
+//     */
+//    protected void addFragment(@IdRes int containerViewId, BaseFragment fragment, Bundle bundle) {
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        if (bundle != null) {
+//            fragment.setArguments(bundle);
+//        }
+//        fragmentTransaction.add(containerViewId, fragment).commit();
+//    }
+//
+//    /**
+//     * 替换Fragment
+//     *
+//     * @param fragment fragment
+//     * @param bundle   传递的数据
+//     */
+//    protected void replaceFragment(@IdRes int containerViewId, BaseFragment fragment, Bundle bundle) {
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        if (bundle != null) {
+//            fragment.setArguments(bundle);
+//        }
+//        fragmentTransaction.replace(containerViewId, fragment).addToBackStack(null).commit();
+//    }
 
     /**
      * 代码逻辑错误，在理论上不可达的位置调用此方法

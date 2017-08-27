@@ -8,6 +8,8 @@
     <color name="accent">#0082ec</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="bg_background">#F2F3FA</color>
+
     //分割线
     <color name="divider">#dedede</color>
     //字体颜色

@@ -26,6 +26,8 @@ dependencies {
     })
     compile 'com.android.support:recyclerview-v7:26.+'
     compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support:design:25.2.0'
+
     //依赖注入库
     compile 'com.jakewharton:butterknife:8.6.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
@@ -47,6 +49,7 @@ dependencies {
     compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
     //图片加载
     compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
-
+    //MPAndroidChart图表库
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
     testCompile 'junit:junit:4.12'
 }

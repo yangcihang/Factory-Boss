@@ -1,19 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_background"
+    android:orientation="vertical"
     tools:context="boss_android.transparent_factory.main.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_tab_menu"
+        android:id="@+id/fl_content">
+    </FrameLayout>
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/ll_tab_menu"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_tab_menu_home"
+            style="@style/tab_menu_item">
+
+            <ImageView
+                android:id="@+id/img_tab_menu_home"
+                android:layout_width="@dimen/tab_icon_width"
+                android:layout_height="@dimen/tab_icon_height"
+                android:background="@drawable/bg_menu_home_selector"/>
+
+            <TextView
+                android:id="@+id/txt_tab_menu_home"
+                style="@style/tab_menu_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_tab_menu_home"
+                android:textColor="@color/def_text_menu_selector"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_tab_menu_order_list"
+            style="@style/tab_menu_item">
+
+            <ImageView
+                android:id="@+id/img_tab_menu_order_list"
+                android:layout_width="@dimen/tab_icon_width"
+                android:layout_height="@dimen/tab_icon_height"
+                android:background="@drawable/bg_menu_order_list_selector"/>
+
+            <TextView
+                android:id="@+id/txt_tab_menu_order_list"
+                style="@style/tab_menu_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_tab_menu_order_list"
+                android:textColor="@color/def_text_menu_selector"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_tab_menu_mine"
+            style="@style/tab_menu_item">
+
+            <ImageView
+                android:id="@+id/img_tab_menu_mine"
+                android:layout_width="@dimen/tab_icon_width"
+                android:layout_height="@dimen/tab_icon_height"
+                android:src="@drawable/bg_menu_mine_selector"/>
+
+            <TextView
+                android:id="@+id/txt_tab_menu_mine"
+                style="@style/tab_menu_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_tab_menu_mine"
+                android:textColor="@color/def_text_menu_selector"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

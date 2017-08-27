@@ -93,6 +93,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/yang/.android/build-cache/12ce8f737807d515ef425b190c2d4e943f638cac/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8fd8a6b4c069ff4581061f0208cbf14f230a22cd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/yang/.android/build-cache/819b0571536ab32d8047fd669efa2d2e0075f3a1/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -102,12 +111,30 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/yang/.android/build-cache/522f361df6a15065def21427d46a68175688f96e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="e51c2f662bb72419632af5192553c37e33890a99">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3bdaef5df4775171636e847c25e64cc4f4c656a2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_57bb77779967ffd0910288f3d90926c30823201f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/yang/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v3.0.2/5d4eb08a326bdbd7fbbddc769666898c9936b282/MPAndroidChart-v3.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="5d4eb08a326bdbd7fbbddc769666898c9936b282">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/MPAndroidChart-v3.0.2_70f318cec4ea8d06bedc335fc1cd11c3f21a1695/classes.dex" />
     </item>
     <item
         is-multidex="true"

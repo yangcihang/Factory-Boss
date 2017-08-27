@@ -2,4 +2,12 @@
     <string name="app_name">Transparent-Factory</string>
     <string name="toast_net_work_error">网络错误</string>
     <string name="toast_unknow_error">未知错误</string>
+    //底部导航栏文字
+    <string name="text_tab_menu_mine">我的管理</string>
+    <string name="text_tab_menu_order_list">订单列表</string>
+    <string name="text_tab_menu_home">订单概况</string>
+    <string name="title_order_processing">进行中</string>
+    <string name="title_order_finished">已完成</string>
+    <string name="title_order_unstart">未开始</string>
+
 </resources>
