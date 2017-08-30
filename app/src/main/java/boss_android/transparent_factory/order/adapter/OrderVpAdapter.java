@@ -1,5 +1,6 @@
 package boss_android.transparent_factory.order.adapter;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 
 import boss_android.transparent_factory.App;
 import boss_android.transparent_factory.R;
+import boss_android.transparent_factory.common.KeyValue;
 import boss_android.transparent_factory.order.fragment.OrderListContentFragment;
 
 /**
@@ -32,19 +34,22 @@ public class OrderVpAdapter extends FragmentPagerAdapter {
         switch (position) {
             case OrderListContentFragment.TYPE_PROCESSING:
                 if (processingOrderListContentFragment == null) {
-                    processingOrderListContentFragment = new OrderListContentFragment(OrderListContentFragment.TYPE_PROCESSING);
+                    processingOrderListContentFragment = OrderListContentFragment.
+                            createFragment(OrderListContentFragment.TYPE_PROCESSING);
                 }
                 fragment = processingOrderListContentFragment;
                 break;
             case OrderListContentFragment.TYPE_FINISHED:
                 if (finishedOrderListContentFragment == null) {
-                    finishedOrderListContentFragment = new OrderListContentFragment(OrderListContentFragment.TYPE_FINISHED);
+                    finishedOrderListContentFragment = OrderListContentFragment.
+                            createFragment(OrderListContentFragment.TYPE_FINISHED);
                 }
                 fragment = finishedOrderListContentFragment;
                 break;
             case OrderListContentFragment.TYPE_UNSTART:
                 if (unstartOrderListContentFragment == null) {
-                    unstartOrderListContentFragment = new OrderListContentFragment(OrderListContentFragment.TYPE_UNSTART);
+                    unstartOrderListContentFragment = OrderListContentFragment.
+                            createFragment(OrderListContentFragment.TYPE_UNSTART);
                 }
                 fragment = unstartOrderListContentFragment;
                 break;

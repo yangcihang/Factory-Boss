@@ -86,6 +86,10 @@ public abstract class RecyclerViewAdapter<Data> extends RecyclerView.Adapter<Rec
         notifyDataSetChanged();
     }
 
+    public void refresh(int position) {
+        notifyItemChanged(position);
+    }
+
     /**
      * 获取当前列表的数据
      *
@@ -108,8 +112,6 @@ public abstract class RecyclerViewAdapter<Data> extends RecyclerView.Adapter<Rec
     public void onBindViewHolder(final ViewHolder<Data> holder, final int position) {
         //ViewHolder绑定数据
         Data data = dataList.get(position);
-        holder.bind(data);
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,7 +119,9 @@ public abstract class RecyclerViewAdapter<Data> extends RecyclerView.Adapter<Rec
                     onItemClickedListener.onItemClicked(dataList.get(position), holder);
                 }
             }
+
         });
+        holder.bind(data, position);
     }
 
 
@@ -150,12 +154,12 @@ public abstract class RecyclerViewAdapter<Data> extends RecyclerView.Adapter<Rec
 
         }
 
-        void bind(Data data) {
+        void bind(Data data, int position) {
             mData = data;
-            onBind(data);
+            onBind(data, position);
         }
 
         //绑定数据
-        protected abstract void onBind(Data data);
+        protected abstract void onBind(Data data, int position);
     }
 }

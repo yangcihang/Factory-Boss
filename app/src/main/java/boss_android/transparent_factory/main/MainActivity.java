@@ -49,7 +49,7 @@ public class MainActivity extends NoBarActivity {
 
     @Override
     protected void initView() {
-
+        onHomeMenuClicked();
     }
 
     @Override

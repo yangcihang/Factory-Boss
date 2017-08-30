@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_home_order_data_procedure_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/home_data_procedure_height"
+        android:background="@drawable/bg_text_home_order_data_list_selector"
+        android:gravity="center"
+        android:text="总工序"
+        android:textColor="@color/def_text_home_order_data_list_selector"
+        android:textSize="@dimen/primary_text"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_home_order_data_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_dark"
+        android:paddingLeft="@dimen/padding_left_right">
+
+        <TextView
+            android:id="@+id/txt_home_order_data_completion_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/home_data_procedure_height"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:text="完成度:"
+            android:textColor="@color/white"
+            android:textSize="@dimen/secondary_text"/>
+
+        <TextView
+            android:id="@+id/txt_home_order_data_completion"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/home_data_procedure_height"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/txt_home_order_data_completion_title"
+            android:gravity="center"
+            android:scrollbarSize="@dimen/secondary_text"
+            android:text="50%"
+            android:textColor="@color/accent"/>
+
+        <TextView
+            android:id="@+id/txt_home_order_data_quantity_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/home_data_procedure_height"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/txt_home_order_data_completion_title"
+            android:gravity="center"
+            android:text="合格数/总数:"
+            android:textColor="@color/white"
+            android:textSize="@dimen/secondary_text"/>
+
+        <TextView
+            android:id="@+id/txt_home_order_data_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/home_data_procedure_height"
+            android:layout_alignTop="@id/txt_home_order_data_quantity_title"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/txt_home_order_data_quantity_title"
+            android:gravity="center"
+            android:scrollbarSize="@dimen/secondary_text"
+            android:text="5/6"
+            android:textColor="@color/accent"/>
+
+        <TextView
+            android:id="@+id/txt_home_order_data_end_time_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/home_data_procedure_height"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/txt_home_order_data_quantity_title"
+            android:gravity="center"
+            android:text="交货时间:"
+            android:textColor="@color/white"
+            android:textSize="@dimen/secondary_text"/>
+
+        <TextView
+            android:id="@+id/txt_home_order_data_end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/home_data_procedure_height"
+            android:layout_alignTop="@id/txt_home_order_data_end_time_title"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/txt_home_order_data_end_time_title"
+            android:gravity="center"
+            android:scrollbarSize="@dimen/secondary_text"
+            android:text="2018-2-2"
+            android:textColor="@color/accent"/>
+    </RelativeLayout>
+</LinearLayout>

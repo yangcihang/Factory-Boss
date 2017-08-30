@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="ac882c85d249aecc98e77e8a850fdf4e08dad85b">
+        sha1="135d877d488636429bcff7f17a109ebf9b3c25ea">
         <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8ec72c048cf4426280e5624ec730781e0f677208/classes.dex" />
     </item>
     <item
@@ -90,6 +90,15 @@
         revision="26.0.0"
         sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
         <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.1.0_eb2b1c6babf140741ea0e195d24fb0caf762face/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/yang/.android/build-cache/c45f12aca2730149a63228a9733ad631405b5f37/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="e1fa5e1123997a55e3ed65b44892993ff4b58cfe">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2adc8f20d51bc859373606c9e729f95222148ce4/classes.dex" />
     </item>
     <item
         is-multidex="true"

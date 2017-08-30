@@ -2,13 +2,14 @@
 <resources>
 
     <!--通用颜色-->
-    <color name="primary">#3eb7f3</color>
-    <color name="primary_dark">#0288d1</color>
+    <color name="primary">#212121</color>
+    <color name="primary_dark">#212121</color>
     <color name="primary_light">#b3e5fc</color>
-    <color name="accent">#0082ec</color>
+
+    <color name="accent">#cfb469</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
-    <color name="bg_background">#F2F3FA</color>
+    <color name="bg_background">#F9F5F2</color>
 
     //分割线
     <color name="divider">#dedede</color>

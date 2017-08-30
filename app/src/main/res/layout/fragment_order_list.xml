@@ -3,6 +3,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:background="@color/white"
               android:orientation="vertical">
 
     <TextView
@@ -11,12 +12,15 @@
         android:background="@color/primary_dark"
         android:gravity="center"
         android:text="@string/text_tab_menu_order_list"
-        android:textColor="@color/white"
+        android:textColor="@color/accent"
         android:textSize="@dimen/title_text"/>
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_order_list"
         android:layout_width="match_parent"
+        android:background="@color/primary_dark"
+        app:tabTextColor="@color/white"
+        app:tabSelectedTextColor="@color/accent"
         android:layout_height="@dimen/tab_height">
 
         <android.support.design.widget.TabItem

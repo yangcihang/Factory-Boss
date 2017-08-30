@@ -9,17 +9,25 @@
     tools:context="boss_android.transparent_factory.main.MainActivity">
 
     <FrameLayout
+        android:id="@+id/fl_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/ll_tab_menu"
-        android:id="@+id/fl_content">
+        android:layout_above="@+id/view_div">
     </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/divider"
+        android:layout_above="@+id/ll_tab_menu"
+        android:id="@+id/view_div"/>
 
     <LinearLayout
         android:id="@+id/ll_tab_menu"
         android:layout_width="match_parent"
         android:layout_height="@dimen/tab_height"
         android:layout_alignParentBottom="true"
+        android:background="@color/bg_background"
         android:orientation="horizontal">
 
         <LinearLayout

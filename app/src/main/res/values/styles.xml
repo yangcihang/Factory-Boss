@@ -39,7 +39,6 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:background">@color/white</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingTop">4dp</item>
         <item name="android:orientation">vertical</item>
@@ -47,8 +46,16 @@
 
     <!--底部菜单字体样式-->
     <style name="tab_menu_text">
-        <item name="android:textSize">@dimen/primary_text</item>
+        <item name="android:textSize">@dimen/secondary_text</item>
         <item name="android:layout_marginTop">2dp</item>
     </style>
-
+    <!--我的页面-->
+    <style name="tab_mine_item">
+        <item name="android:paddingLeft">@dimen/padding_left_right</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/bg_mine_item_shape</item>
+    </style>
 </resources>

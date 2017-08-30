@@ -9,5 +9,8 @@
     <string name="title_order_processing">进行中</string>
     <string name="title_order_finished">已完成</string>
     <string name="title_order_unstart">未开始</string>
+    <string name="text_tab_menu_order_capacity">订单产能</string>
+    <string name="title_home_chart">图表</string>
+    <string name="title_home_data">数据</string>
 
 </resources>

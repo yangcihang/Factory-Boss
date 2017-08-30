@@ -1,17 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
-    </LinearLayout>
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary_dark"
         android:gravity="center"
-        android:text="mine"/>
+        android:text="@string/text_tab_menu_mine"
+        android:textColor="@color/accent"
+        android:textSize="@dimen/title_text"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/primary_dark"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_user_avatar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:background="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/txt_mine_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_user_avatar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="刘明好"
+            android:textColor="@color/accent"
+            android:textSize="@dimen/title_text"/>
+
+        <TextView
+            android:id="@+id/txt_mine_user_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_mine_user_name"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="账号：15028595851"
+            android:textColor="@color/accent"
+            android:textSize="@dimen/primary_text"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_mine_my_account"
+        style="@style/tab_mine_item">
+
+        <TextView
+            android:id="@+id/txt_mine_account"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center|left"
+            android:text="我的信息"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/primary_text"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_forward"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_mine_change_mobile"
+        style="@style/tab_mine_item">
+
+        <TextView
+            android:id="@+id/txt_mine_change_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center|left"
+            android:text="修改手机号"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/primary_text"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_forward"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_mine_change_password"
+        style="@style/tab_mine_item">
+
+        <TextView
+            android:id="@+id/txt_mine_change_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center|left"
+            android:text="修改密码"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/primary_text"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_forward"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_mine_employee_account"
+        style="@style/tab_mine_item"
+        android:layout_marginTop="24dp">
+
+        <TextView
+            android:id="@+id/txt_mine_employee_account"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center|left"
+            android:text="员工账号管理"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/primary_text"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_forward"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_mine_quit_account"
+        style="@style/tab_mine_item"
+        android:layout_marginTop="24dp">
+
+        <TextView
+            android:id="@+id/txt_mine_quit_account"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:text="退出登录"
+            android:textColor="@color/red_warning"
+            android:textSize="@dimen/primary_text"/>
+
+    </RelativeLayout>
 </LinearLayout>

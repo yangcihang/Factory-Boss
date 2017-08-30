@@ -4,12 +4,19 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import boss_android.transparent_factory.R;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static android.view.View.GONE;
 
 public abstract class RecyclerFooterAdapter<Data> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public static final int FOOTER_ITEM = 1;
@@ -17,6 +24,7 @@ public abstract class RecyclerFooterAdapter<Data> extends RecyclerView.Adapter<R
     private List<Data> dataList;
     protected Context context;
     protected LayoutInflater inflater;
+    protected RefreshFooterHolder footerHolder;
     private OnItemClicked<Data> onItemClickedListener;
 
     public RecyclerFooterAdapter(Context context) {
@@ -122,7 +130,7 @@ public abstract class RecyclerFooterAdapter<Data> extends RecyclerView.Adapter<R
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         if (position < dataList.size()) {
             Data data = dataList.get(position);
-            ((ViewHolder<Data>) holder).bind(data);
+            ((ViewHolder<Data>) holder).bind(data, position);
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -132,6 +140,19 @@ public abstract class RecyclerFooterAdapter<Data> extends RecyclerView.Adapter<R
                 }
             });
         }
+    }
+
+    /**
+     * 根据不同种类创建不同的holder
+     */
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if (viewType == FOOTER_ITEM) {
+            View view = inflater.inflate(R.layout.item_rec_footer, parent, false);
+            footerHolder = new RefreshFooterHolder(view);
+            return footerHolder;
+        }
+        return null;
     }
 
     /**
@@ -156,24 +177,42 @@ public abstract class RecyclerFooterAdapter<Data> extends RecyclerView.Adapter<R
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-
         }
 
-        void bind(Data data) {
+        void bind(Data data, int position) {
             mData = data;
-            onBind(data);
+            onBind(data, position);
         }
 
         //绑定数据
-        protected abstract void onBind(Data data);
+        protected abstract void onBind(Data data, int position);
+    }
+
+    /**
+     * 设置是否处于刷新状态
+     */
+    public void setToRefresh(boolean toRefresh) {
+        if (toRefresh) {
+            if (footerHolder != null) {
+                footerHolder.footerProgress.setVisibility(View.VISIBLE);
+                footerHolder.loadMoreTxt.setText("正在加载");
+            }
+        } else {
+            footerHolder.footerProgress.setVisibility(GONE);
+            footerHolder.loadMoreTxt.setText("已经加载完啦");
+        }
     }
 
     /**
      * 底部刷新的holder
      */
-    public abstract static class FooterHolder extends RecyclerView.ViewHolder {
+    public class RefreshFooterHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.progress_footer)
+        ProgressBar footerProgress;
+        @BindView(R.id.txt_load_more)
+        TextView loadMoreTxt;
 
-        public FooterHolder(View itemView) {
+        RefreshFooterHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
@@ -193,5 +232,6 @@ public abstract class RecyclerFooterAdapter<Data> extends RecyclerView.Adapter<R
     public interface OnItemClicked<Data> {
         void onItemClicked(Data data, ViewHolder holder);
     }
+
 
 }
