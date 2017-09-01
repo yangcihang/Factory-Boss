@@ -2,11 +2,13 @@ package boss_android.transparent_factory;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import boss_android.transparent_factory.account.activity.LoginActivity;
 import boss_android.transparent_factory.common.User;
 import boss_android.transparent_factory.util.CacheUtil;
 
@@ -27,6 +29,8 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
+        User.load(this);
+        registerActivityLifecycleCallbacks(activityLifecycleCallbacks);
         //RichText.initCacheDir(this);
     }
 
@@ -120,6 +124,7 @@ public class App extends Application {
      * 退出账户
      */
     public void exitAccount() {
+        User.exitLogin(this);
         removeAllActivity();
     }
 }

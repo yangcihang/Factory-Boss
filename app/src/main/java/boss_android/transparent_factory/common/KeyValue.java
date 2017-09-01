@@ -8,4 +8,5 @@ package boss_android.transparent_factory.common;
 
 public class KeyValue {
     public static final String KEY_ORDER_FRAGMENT_TYPE = "ORDER_TYPE";
+    public static final String KEY_ORDER_LIST_MODEL = "ORDER_MODEL";
 }

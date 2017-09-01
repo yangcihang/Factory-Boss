@@ -1,20 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/bg_background"
-              android:orientation="vertical">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/bg_background">
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/refresh_home_chart"
+    <include
+        android:id="@+id/empty"
+        layout="@layout/view_empty"
+        android:visibility="gone"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rec_home_chart"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary_dark"
+            android:gravity="center"
+            android:text="@string/text_tab_menu_order_capacity"
+            android:textColor="@color/accent"
+            android:textSize="@dimen/title_text"/>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_home_chart"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        </android.support.v7.widget.RecyclerView>
-    </android.support.v4.widget.SwipeRefreshLayout>
 
-</LinearLayout>
+            <boss_android.transparent_factory.widget.SimpleRecyclerView
+                android:id="@+id/rec_home_chart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </boss_android.transparent_factory.widget.SimpleRecyclerView>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+</FrameLayout>

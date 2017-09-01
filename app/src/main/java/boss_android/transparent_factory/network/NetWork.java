@@ -1,6 +1,7 @@
 package boss_android.transparent_factory.network;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import boss_android.transparent_factory.common.Config;
 import boss_android.transparent_factory.common.User;
@@ -43,6 +44,7 @@ public class NetWork {
 
         OkHttpClient client = new OkHttpClient.Builder()
                 //在发送和响应时拦截
+                .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .addNetworkInterceptor(new Interceptor() {
                     @Override
                     public Response intercept(Chain chain) throws IOException {
@@ -69,7 +71,7 @@ public class NetWork {
                         return response;
                     }
                 })
-                .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                .connectTimeout(Config.APP_SERVER_CONNECT_TIME_OUT, TimeUnit.SECONDS)
                 .build();
 
         instance.retrofit = new Retrofit.Builder()

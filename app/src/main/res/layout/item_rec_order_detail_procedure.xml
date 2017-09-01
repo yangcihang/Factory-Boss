@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding_height_bottom"
+                android:paddingTop="@dimen/padding_height_bottom">
+
+    <TextView
+        android:id="@+id/txt_detail_procedure_class_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="233班组"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/secondary_text"/>
+
+    <TextView
+        android:id="@+id/txt_detail_procedure_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="任务号：B123-12"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/secondary_text"/>
+
+    <TextView
+        android:id="@+id/txt_detail_procedure_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_detail_procedure_class_title"
+        android:layout_marginTop="12dp"
+        android:text="工序：捏泥人"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/primary_text"/>
+
+    <TextView
+        android:id="@+id/txt_detail_procedure_processing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/txt_detail_procedure_title"
+        android:layout_alignParentRight="true"
+        android:text="80/100"
+        android:textColor="@color/accent"
+        android:textSize="@dimen/secondary_text"/>
+
+    <ProgressBar
+        android:id="@+id/progress_detail_procedure"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:layout_below="@id/txt_detail_procedure_title"
+        android:layout_marginTop="12dp"
+        android:max="100"
+        android:progress="99"
+        android:progressDrawable="@drawable/bg_progress"/>
+
+    <TextView
+        android:id="@+id/txt_detail_procedure_create_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/progress_detail_procedure"
+        android:layout_marginTop="12dp"
+        android:text="2017-8-8"/>
+
+    <TextView
+        android:id="@+id/txt_detail_procedure_end_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/progress_detail_procedure"
+        android:layout_marginTop="12dp"
+        android:text="2017-8-8"/>
+
+</RelativeLayout>

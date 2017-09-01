@@ -13,9 +13,9 @@
     <dimen name="tab_icon_width">24dp</dimen>
     <dimen name="tab_icon_height">24dp</dimen>
 
-    <!--首页图表card尺寸-->
-    <dimen name="margin_home_order_item_top_bottom">20dp</dimen>
-    <dimen name="margin_home_order_left_right">24dp</dimen>
+    <!--所有的图表card尺寸-->
+    <dimen name="margin_order_item_top_bottom">20dp</dimen>
+    <dimen name="margin_order_left_right">24dp</dimen>
 
     <!--首页数据展示页每道工序的高度-->
     <dimen name="home_data_procedure_height">40dp</dimen>

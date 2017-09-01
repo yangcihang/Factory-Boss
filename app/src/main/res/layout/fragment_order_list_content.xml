@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/bg_background"
-              android:orientation="vertical">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/bg_background">
+
+    <include
+        android:id="@+id/empty"
+        layout="@layout/view_empty"
+        android:visibility="gone"/>
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/refresh_order_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
+        <boss_android.transparent_factory.widget.SimpleRecyclerView
             android:id="@+id/rec_order_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        </android.support.v7.widget.RecyclerView>
+        </boss_android.transparent_factory.widget.SimpleRecyclerView>
     </android.support.v4.widget.SwipeRefreshLayout>
-</LinearLayout>
+</FrameLayout>

@@ -27,6 +27,7 @@ class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
         this.type = type;
     }
 
+    //2xx可以走到，其他走到onResponse
     @Override
     public T convert(ResponseBody value) throws IOException {
         //将返回的json数据储存在String类型的response中

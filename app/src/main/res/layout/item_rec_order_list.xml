@@ -31,7 +31,7 @@
             android:textSize="@dimen/secondary_text"/>
 
         <TextView
-            android:id="@+id/txt_order_description"
+            android:id="@+id/txt_order_custom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_order_title"
@@ -46,14 +46,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@id/txt_order_description"
+            android:layout_alignTop="@id/txt_order_custom"
             android:layout_below="@id/txt_order_title"
             android:text="订单号:12985y"
             android:textColor="@color/primary_text"
             android:textSize="@dimen/secondary_text"/>
 
         <TextView
-            android:id="@+id/txt_order_completion"
+            android:id="@+id/txt_order_capacity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -67,9 +67,9 @@
             style="@android:style/Widget.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="4dp"
-            android:layout_below="@id/txt_order_completion"
+            android:layout_below="@id/txt_order_capacity"
             android:max="100"
-            android:progress="50"
+            android:progress="99"
             android:progressDrawable="@drawable/bg_progress"/>
 
         <TextView

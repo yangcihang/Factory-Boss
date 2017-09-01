@@ -4,10 +4,13 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import boss_android.transparent_factory.R;
 import boss_android.transparent_factory.base.adapter.RecyclerFooterAdapter;
 import boss_android.transparent_factory.order.model.OrderListModel;
+import butterknife.BindView;
 
 /**
  * @author YangCihang
@@ -32,12 +35,34 @@ public class OrderListAdapter extends RecyclerFooterAdapter<OrderListModel> {
     }
 
     class ItemHolder extends ViewHolder<OrderListModel> {
+        @BindView(R.id.txt_order_title)
+        TextView titleTxt;
+        @BindView(R.id.txt_order_custom)
+        TextView customTxt;
+        @BindView(R.id.txt_order_id)
+        TextView orderIdTxt;
+        @BindView(R.id.txt_order_capacity)
+        TextView capacityTxt;
+        @BindView(R.id.txt_order_create_time)
+        TextView createTxt;
+        @BindView(R.id.txt_order_end_time)
+        TextView endTxt;
+        @BindView(R.id.progress_order)
+        ProgressBar orderProgress;
+
         public ItemHolder(View itemView) {
             super(itemView);
         }
 
         @Override
         protected void onBind(OrderListModel orderListModel, int position) {
+            titleTxt.setText(orderListModel.getTitle());
+            customTxt.setText(orderListModel.getCustomerInfo());
+            orderIdTxt.setText("订单号" + String.valueOf(orderListModel.getOrderCode()));
+            capacityTxt.setText(String.valueOf(orderListModel.getCapacity()));
+            createTxt.setText(orderListModel.getCreatedAt());
+            endTxt.setText(orderListModel.getEndTime());
+            orderProgress.setProgress((int) (orderListModel.getCapacity() * 100));
         }
     }
 }

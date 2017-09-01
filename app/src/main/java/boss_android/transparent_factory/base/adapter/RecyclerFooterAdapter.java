@@ -192,14 +192,14 @@ public abstract class RecyclerFooterAdapter<Data> extends RecyclerView.Adapter<R
      * 设置是否处于刷新状态
      */
     public void setToRefresh(boolean toRefresh) {
-        if (toRefresh) {
-            if (footerHolder != null) {
+        if (footerHolder != null) {
+            if (toRefresh) {
                 footerHolder.footerProgress.setVisibility(View.VISIBLE);
                 footerHolder.loadMoreTxt.setText("正在加载");
+            } else {
+                footerHolder.footerProgress.setVisibility(GONE);
+                footerHolder.loadMoreTxt.setText("已经加载完啦");
             }
-        } else {
-            footerHolder.footerProgress.setVisibility(GONE);
-            footerHolder.loadMoreTxt.setText("已经加载完啦");
         }
     }
 

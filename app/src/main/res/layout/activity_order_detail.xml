@@ -1,7 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
-</LinearLayout>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingLeft="@dimen/margin_order_left_right"
+        android:paddingRight="@dimen/margin_order_left_right"
+        android:paddingTop="@dimen/margin_order_item_top_bottom">
+
+        <TextView
+            android:id="@+id/txt_detail_order_custom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="奥特曼集团"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/secondary_text"/>
+
+        <TextView
+            android:id="@+id/txt_detail_order_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="订单号:31231312"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/secondary_text"/>
+
+        <TextView
+            android:id="@+id/txt_detail_order_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_detail_order_custom"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="生产奥特曼100个"
+            android:textColor="@color/primary_text"
+            android:textSize="21sp"/>
+
+        <TextView
+            android:id="@+id/txt_detail_center_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_detail_order_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_order_item_top_bottom"
+            android:text="生产中"
+            android:textColor="@color/accent"
+            android:textSize="@dimen/primary_text"/>
+
+        <TextView
+            android:id="@+id/txt_detail_order_create_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_detail_center_title"
+            android:layout_marginTop="@dimen/margin_order_item_top_bottom"
+            android:text="2017-7-12"/>
+
+
+        <TextView
+            android:id="@+id/txt_detail_order_end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/txt_detail_center_title"
+            android:layout_marginTop="@dimen/margin_order_item_top_bottom"
+            android:text="2019-2-4"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/txt_detail_center_title"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="29dp"
+            android:layout_toLeftOf="@id/txt_detail_order_end_time"
+            android:layout_toRightOf="@id/txt_detail_order_create_time"
+            android:background="@color/black"/>
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart_pie_detail_order_total_completion"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:layout_below="@id/txt_detail_order_create_time"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_order_item_top_bottom">
+        </com.github.mikephil.charting.charts.PieChart>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rec_detail_procedure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chart_pie_detail_order_total_completion"
+            android:layout_marginTop="@dimen/margin_order_item_top_bottom">
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>
+

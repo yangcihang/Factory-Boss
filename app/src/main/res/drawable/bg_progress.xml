@@ -4,7 +4,7 @@
 
         <shape>
 
-            <solid android:color="@color/imagepicker_text_gray"/>
+            <solid android:color="@color/accent"/>
 
             <corners android:radius="0dp"/>
 
@@ -27,10 +27,10 @@
 
                 <gradient
                     android:angle="0"
-                    android:centerColor="#80ffb600"
+                    android:centerColor="@color/primary_dark"
                     android:centerY="0.75"
-                    android:endColor="#a0ffcb00"
-                    android:startColor="#80ffd300"/>
+                    android:endColor="@color/primary_dark"
+                    android:startColor="@color/primary_dark"/>
             </shape>
         </clip>
     </item>
@@ -38,16 +38,9 @@
     <item android:id="@android:id/progress">
 
         <clip>
-
             <shape>
-
                 <corners android:radius="0dp"/>
-                <solid android:color="@color/accent"/>
-
-                <!--<gradient-->
-                <!--android:angle="0"-->
-                <!--android:endColor="#8000ff00"-->
-                <!--android:startColor="#80ff0000" />-->
+                <solid android:color="@color/primary_dark"/>
             </shape>
         </clip>
     </item>

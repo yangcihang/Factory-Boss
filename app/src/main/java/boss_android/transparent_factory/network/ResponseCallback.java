@@ -31,27 +31,25 @@ public class ResponseCallback<T> implements Callback<RspModel<T>> {
     @Override
     public void onResponse(Call<RspModel<T>> call, Response<RspModel<T>> response) {
         //前两句在Converter中已判断，在次做二次判断,所以以下的else都在failure中执行
-        if (response.raw().code() < HttpStateCode.REQUEST_SUCCESS) {
+        if (response.raw().code() <= HttpStateCode.REQUEST_SUCCESS) {
             if (response.body().getCode() == RspCode.SUCCEED) {
                 if (onDataCallback != null) {
                     onDataCallback.onDataSuccess(response.body().getData());
                 }
-//            } else {
-//                GlobalAPIErrorHandler.handle(response.body().getCode());
-//                onDataCallback.onDataFailed(R.string.empty);
-//            }
-//        } else {
-//            onDataCallback.onDataFailed(R.string.empty);
-//            GlobalAPIErrorHandler.handle(response.raw().code());
-//        }
+            } else {
+                GlobalAPIErrorHandler.handle(response.body().getCode());
+                onDataCallback.onDataFailed(response.body().getCode());
             }
+        } else {
+            onDataCallback.onDataFailed(response.raw().code());
+            GlobalAPIErrorHandler.handle(response.raw().code());
         }
     }
+
 
     //失败时回调(解析错误时的处理)
     @Override
     public void onFailure(Call<RspModel<T>> call, Throwable t) {
-        int id;
         if (t instanceof ResultException) {
             if (TextUtils.isEmpty(((ResultException) t).getMsg())) {
                 GlobalAPIErrorHandler.handle(((ResultException) t).getCode());
