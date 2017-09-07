@@ -2,11 +2,15 @@ package boss_android.transparent_factory.detail;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,7 +76,7 @@ public class OrderDetailActivity extends ToolbarActivity {
         adapter.setOnItemClickedListener(new RecyclerViewAdapter.OnItemClicked<ProcedureModel>() {
             @Override
             public void onItemClicked(ProcedureModel procedureModel, RecyclerViewAdapter.ViewHolder holder) {
-                startActivity(new Intent(OrderDetailActivity.this, ProcedureDetailActivity.class));
+                ProcedureDetailActivity.start(OrderDetailActivity.this, procedureModel);
             }
         });
     }
@@ -102,11 +106,33 @@ public class OrderDetailActivity extends ToolbarActivity {
     }
 
     /**
+     * 初始化图表
+     */
+    private void initChart() {
+        float capacity = contentModel.getCapacity();
+        List<PieEntry> entries = new ArrayList<>();
+        entries.add(new PieEntry(capacity * 100, "产能完成度"));
+        entries.add(new PieEntry(100 - capacity * 100, "产能未完成度"));
+        PieDataSet totalSet = new PieDataSet(entries, "");
+        totalSet.setValueTextSize(15);
+        ArrayList<Integer> colors = new ArrayList<>();
+        colors.add(Color.rgb(207, 180, 105));
+        colors.add(Color.rgb(33, 33, 33));
+        totalSet.setColors(colors);
+        PieData pieData = new PieData(totalSet);
+        orderTotalCompletionPieChart.setData(pieData);
+        orderTotalCompletionPieChart.setCenterText("产能完成度");
+        orderTotalCompletionPieChart.setDescription(null);
+        orderTotalCompletionPieChart.invalidate();
+    }
+
+    /**
      * 数据返回成功时候
      */
     public void onDataLoadSuccess(List<ProcedureModel> procedureModels) {
         disMissProgressDialog();
         adapter.setData(procedureModels);
+        initChart();
     }
 
     /**

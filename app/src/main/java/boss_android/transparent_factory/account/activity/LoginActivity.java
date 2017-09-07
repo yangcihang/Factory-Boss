@@ -15,6 +15,8 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
+ * 登录界面
+ *
  * @author YangCihang
  * @since 17/8/31.
  * email yangcihang@hrsoft.net
@@ -35,7 +37,6 @@ public class LoginActivity extends NoBarActivity {
 
     @Override
     protected void initVariable() {
-
     }
 
     @Override
@@ -68,6 +69,7 @@ public class LoginActivity extends NoBarActivity {
      */
     public void onLoginSuccess() {
         disMissProgressDialog();
+        this.finish();
         startActivity(new Intent(this, MainActivity.class));
     }
 
@@ -90,10 +92,12 @@ public class LoginActivity extends NoBarActivity {
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             String account = accountEdit.getText().toString().trim();
             String psw = pswEdit.getText().toString().trim();
-            if (account.length() > 10 && psw.length() > 6) {
+            if (account.length() > 10 && psw.length() > 5) {
                 loginBtn.setSelected(true);
+                loginBtn.setClickable(true);
             } else {
                 loginBtn.setSelected(false);
+                loginBtn.setClickable(false);
             }
         }
 

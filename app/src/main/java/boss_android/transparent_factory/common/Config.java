@@ -25,7 +25,6 @@ public final class Config {
     /**
      * APP Server 网络请求连接超时时间，单位：s
      */
-    public static final int APP_SERVER_CONNECT_TIME_OUT = 5;
-
+    public static final int APP_SERVER_CONNECT_TIME_OUT = 15;
 
 }

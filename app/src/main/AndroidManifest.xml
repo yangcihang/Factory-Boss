@@ -23,6 +23,8 @@
         </activity>
         <activity android:name=".detail.activity.ProcedureDetailActivity"/>
         <activity android:name=".mine.activity.EmployeeAccountActivity"/>
+        <activity android:name=".mine.activity.AddEmployeeActivity"/>
+        <activity android:name=".mine.activity.UserDetailActivity"/>
     </application>
 
 </manifest>

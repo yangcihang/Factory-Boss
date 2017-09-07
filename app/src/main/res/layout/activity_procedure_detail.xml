@@ -1,7 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/white">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="1dp"
+            android:layout_weight="9"
+            android:background="@color/bg_background"
+            android:paddingBottom="@dimen/margin_order_item_top_bottom"
+            android:paddingLeft="@dimen/margin_order_left_right"
+            android:paddingRight="@dimen/margin_order_left_right"
+            android:paddingTop="@dimen/margin_order_item_top_bottom">
+
+            <TextView
+                android:id="@+id/txt_detail_procedure_class_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="奥特曼组"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/secondary_text"/>
+
+            <TextView
+                android:id="@+id/txt_detail_procedure_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="任务号：123"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/secondary_text"/>
+
+            <TextView
+                android:id="@+id/txt_detail_procedure_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_detail_procedure_id"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_order_item_top_bottom"
+                android:text="工序：奥特曼制造"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/title_text"/>
+
+            <TextView
+                android:id="@+id/txt_detail_procedure_quality_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_detail_procedure_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:text="合格率90%"
+                android:textColor="@color/accent"
+                android:textSize="@dimen/primary_text"/>
+
+            <ProgressBar
+                android:id="@+id/progress_detail_procedure"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_below="@id/txt_detail_procedure_quality_percent"
+                android:layout_marginTop="12dp"
+                android:max="100"
+                android:progress="40"
+                android:progressDrawable="@drawable/bg_progress"/>
+
+            <TextView
+                android:id="@+id/txt_detail_procedure_quality_ratio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/progress_detail_procedure"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:text="9/100"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/title_text"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="19"
+            android:background="@color/bg_background"
+            android:paddingBottom="@dimen/margin_order_item_top_bottom"
+            android:paddingTop="@dimen/margin_order_item_top_bottom">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/line_chart_detail_procedure"
+                android:layout_width="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp">
+            </com.github.mikephil.charting.charts.LineChart>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rec_detail_procedure_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/line_chart_detail_procedure"
+                android:layout_marginTop="8dp">
+            </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -3,10 +3,13 @@ package boss_android.transparent_factory.detail.adapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import boss_android.transparent_factory.R;
 import boss_android.transparent_factory.base.adapter.RecyclerViewAdapter;
 import boss_android.transparent_factory.detail.model.ProcedureModel;
+import butterknife.BindView;
 
 /**
  * @author YangCihang
@@ -15,6 +18,7 @@ import boss_android.transparent_factory.detail.model.ProcedureModel;
  */
 
 public class DetailProcedureAdapter extends RecyclerViewAdapter<ProcedureModel> {
+
     public DetailProcedureAdapter(Context context) {
         super(context);
     }
@@ -26,13 +30,31 @@ public class DetailProcedureAdapter extends RecyclerViewAdapter<ProcedureModel> 
     }
 
     class ItemHolder extends ViewHolder<ProcedureModel> {
+        @BindView(R.id.txt_detail_procedure_class_title) TextView procedureClassTitleTxt;
+        @BindView(R.id.txt_detail_procedure_id) TextView procedureIdTxt;
+        @BindView(R.id.txt_detail_procedure_title) TextView procedureTitleTxt;
+        @BindView(R.id.txt_detail_procedure_processing) TextView procedureProcessingTxt;
+        @BindView(R.id.progress_detail_procedure) ProgressBar detailProcedureProgress;
+        @BindView(R.id.txt_detail_procedure_create_time) TextView createTimeTxt;
+        @BindView(R.id.txt_detail_procedure_end_time) TextView endTimeTxt;
+
         public ItemHolder(View itemView) {
             super(itemView);
         }
 
         @Override
         protected void onBind(ProcedureModel procedureModel, int position) {
-
+            float successCount = procedureModel.getSuccessCount();
+            float totalCount = procedureModel.getTotalCount();
+            int progress = (int) ((successCount / totalCount) * 100);
+            procedureIdTxt.setText(String.valueOf("任务号:" + procedureModel.getId()));
+            procedureClassTitleTxt.setText(procedureModel.getWorkGroupName());
+            procedureTitleTxt.setText(procedureModel.getName());
+            procedureProcessingTxt.setText(String.valueOf((int) successCount) + "/" +
+                    String.valueOf((int) totalCount));
+            detailProcedureProgress.setProgress(progress);
+            createTimeTxt.setText(procedureModel.getCreatedAt());
+            endTimeTxt.setText(procedureModel.getEndTime());
         }
     }
 }

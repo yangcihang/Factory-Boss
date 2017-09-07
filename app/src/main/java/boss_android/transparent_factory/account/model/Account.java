@@ -11,7 +11,16 @@ public class Account {
     private String mobile;// 登录的账户(手机号)
     private int sex; //用户性别
     private int id; //用户id
+    private String password;
     private String name; // 用户昵称
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 
     public String getToken() {
         return token;

@@ -21,6 +21,7 @@ public class TimeUtil {
     public static final String DATE_DEFAULT_FORMAT = "yyyy-MM-dd";
     /** 默认时间格式 */
     public static final String TIME_DEFAULT_FORMAT = "HH:mm:ss";
+    public static final String TIME_DEFAULT_MONTH = "yyyy-MM-dd";
 
     /**
      * 获取系统当前时间
@@ -46,6 +47,20 @@ public class TimeUtil {
      */
     public static long setStringToStamp(String time) {
         sf = new SimpleDateFormat(DATETIME_DEFAULT_FORMAT);
+        Date date = new Date();
+        try {
+            date = sf.parse(time);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date.getTime();
+    }
+
+    /**
+     * 将字符串转换为时间戳(毫秒级)
+     */
+    public static long setStringToStamp(String time, String format) {
+        sf = new SimpleDateFormat(format);
         Date date = new Date();
         try {
             date = sf.parse(time);

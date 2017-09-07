@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg_background"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/padding_height_bottom"
+              android:paddingTop="@dimen/padding_height_bottom">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_mine_user_detail_height"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/padding_left_right"
+        android:paddingRight="@dimen/padding_left_right"
+        android:paddingTop="16dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:gravity="left|center"
+            android:text="姓名"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/primary_text"/>
+
+        <EditText
+            android:id="@+id/edit_mine_employee_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_normal_rect"
+            android:gravity="center"
+            android:hint="请输入姓名"
+            android:maxLength="12"
+            android:maxLines="1"
+            android:textSize="@dimen/primary_text"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_mine_user_detail_height"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/padding_left_right"
+        android:paddingRight="@dimen/padding_left_right"
+        android:paddingTop="16dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="left|center"
+            android:text="手机号"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/primary_text"/>
+
+        <EditText
+            android:id="@+id/edit_mine_employee_mobile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_normal_rect"
+            android:gravity="center"
+            android:hint="请输入手机号"
+            android:inputType="number"
+            android:maxLength="12"
+            android:maxLines="1"
+            android:textSize="@dimen/primary_text"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_mine_user_detail_height"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/padding_left_right"
+        android:paddingRight="@dimen/padding_left_right"
+        android:paddingTop="16dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center|left"
+            android:text="密码"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/primary_text"/>
+
+        <EditText
+            android:id="@+id/edit_mine_employee_password"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_normal_rect"
+            android:gravity="center"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:maxLength="12"
+            android:maxLines="1"
+            android:textSize="@dimen/primary_text"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_mine_user_detail_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        android:layout_marginLeft="@dimen/padding_left_right"
+        android:layout_marginRight="@dimen/padding_left_right"
+        android:layout_marginTop="40dp"
+        android:background="@color/primary_dark"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/accent"/>
+</LinearLayout>

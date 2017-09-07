@@ -115,6 +115,16 @@ public class User {
         User.save(App.getInstance());
     }
 
+    public static void setMobile(String mobile) {
+        User.mobile = mobile;
+        User.save(App.getInstance());
+    }
+
+    public static void setName(String name) {
+        User.name = name;
+        User.save(App.getInstance());
+    }
+
     public static int getId() {
         return id;
     }
@@ -142,9 +152,5 @@ public class User {
 
     public static String getEmail() {
         return email;
-    }
-
-    public static void setEmail(String email) {
-        User.email = email;
     }
 }

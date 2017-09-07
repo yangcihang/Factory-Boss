@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Transparent-Factory</string>
+    <string name="app_name">透明工厂—老板端</string>
     <string name="toast_net_work_error">网络错误</string>
     <string name="toast_unknow_error">未知错误</string>
     //底部导航栏文字
@@ -15,5 +15,9 @@
     <string name="dialog_loading">加载中</string>
     <string name="toast_procedure_load_failed">订单列表加载失败</string>
     <string name="toast_no_procedure_info">暂无工序信息</string>
+    <string name="toast_user_updata_success">修改成功</string>
+    <string name="toast_mobile_error">手机号格式不正确</string>
+    <string name="toast_password_error">请输入6-20位密码</string>
+    <string name="toast_user_name_empty">用户名不能为空</string>
 
 </resources>

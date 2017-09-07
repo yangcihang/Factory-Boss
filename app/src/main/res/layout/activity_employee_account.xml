@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/bg_background">
 
-    <android.support.v7.widget.RecyclerView
+    <include
+        android:id="@+id/empty"
+        layout="@layout/view_empty"
+        android:visibility="gone"/>
+
+    <boss_android.transparent_factory.widget.SimpleRecyclerView
         android:id="@+id/rec_mine_employee_account"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/txt_mine_employee_add">
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent">
+    </boss_android.transparent_factory.widget.SimpleRecyclerView>
 
-    <TextView
-        android:id="@+id/txt_mine_employee_add"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/tab_height"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add_employee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/primary_dark"
-        android:gravity="center"
-        android:text="添加"
-        android:textColor="@color/accent"
-        android:textSize="@dimen/title_text"/>
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="48dp"
+        android:layout_marginRight="48dp"/>
 </RelativeLayout>

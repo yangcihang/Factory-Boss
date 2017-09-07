@@ -19,4 +19,11 @@
 
     <!--首页数据展示页每道工序的高度-->
     <dimen name="home_data_procedure_height">40dp</dimen>
+    <dimen name="item_mine_user_detail_height">50dp</dimen>
+    <!--dialog的参数-->
+    <integer name="dialog_button_txt_size">14</integer>
+    <integer name="dialog_title_txt_size">22</integer>
+    <integer name="dialog_input_hint_txt_size">16</integer>
+    <integer name="dialog_margin_abroad">14</integer>
+    <integer name="dialog_margin_top">14</integer>
 </resources>

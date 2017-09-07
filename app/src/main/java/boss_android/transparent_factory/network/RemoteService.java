@@ -1,14 +1,23 @@
 package boss_android.transparent_factory.network;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import boss_android.transparent_factory.account.model.LoginRequest;
 import boss_android.transparent_factory.account.model.LoginResponse;
 import boss_android.transparent_factory.detail.model.ProcedureListResponse;
+import boss_android.transparent_factory.detail.model.ProcedureNumListResponse;
+import boss_android.transparent_factory.mine.model.AddEmployeeRequest;
+import boss_android.transparent_factory.mine.model.EmployeeModel;
+import boss_android.transparent_factory.mine.model.PasswordModel;
+import boss_android.transparent_factory.mine.model.UserUpdateRequest;
 import boss_android.transparent_factory.order.model.OrderListResponse;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -35,4 +44,22 @@ public interface RemoteService {
 
     @GET("order/{orderId}/procedures")
     Call<RspModel<ProcedureListResponse>> requestProcedureList(@Path("orderId") String orderId);
+
+    @GET("procedure/{procedureId}/logs")
+    Call<RspModel<ProcedureNumListResponse>> requestProcedureNum(@Path("procedureId") String procedureId);
+
+    @PUT("user/{id}")
+    Call<RspModel> updateUserInfo(@Path("id") String id, @Body UserUpdateRequest requestBody);
+
+    /**
+     * 修改密码
+     */
+    @PUT("user/{id}")
+    Call<RspModel> updateUserPassword(@Path("id") String id, @Body PasswordModel password);
+
+    @GET("managers")
+    Call<RspModel<ArrayList<EmployeeModel>>> requestEmployeeList();
+
+    @POST("admin/managers/create")
+    Call<RspModel> addManagerInfo(@Body AddEmployeeRequest manegers);
 }

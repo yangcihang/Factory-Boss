@@ -65,7 +65,7 @@ public class ResponseCallback<T> implements Callback<RspModel<T>> {
             onDataCallback.onDataFailed(-1);
         } else {
             ToastUtil.showToast(t.getMessage());
-//            ToastUtil.showToast(R.string.toast_unknow_error);
+            //ToastUtil.showToast(R.string.toast_unknow_error);
             onDataCallback.onDataFailed(-1);
         }
     }

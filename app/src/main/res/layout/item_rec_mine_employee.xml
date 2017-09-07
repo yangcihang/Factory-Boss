@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
+              android:layout_marginBottom="1dp"
+              android:background="@color/white"
               android:orientation="horizontal">
 
     <TextView
@@ -9,18 +11,11 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/tab_height"
         android:layout_weight="1"
-        android:gravity="left|start|center"
+        android:gravity="center"
         android:paddingLeft="@dimen/padding_left_right"
+        android:paddingRight="8dp"
         android:text="奥特曼"
+        android:textColor="@color/primary_text"
         android:textSize="@dimen/primary_text"/>
 
-    <TextView
-        android:id="@+id/txt_mine_employee_title"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/tab_height"
-        android:layout_weight="1"
-        android:gravity="right|end|center"
-        android:paddingRight="@dimen/padding_left_right"
-        android:text="喵喵喵"
-        android:textSize="@dimen/primary_text"/>
 </LinearLayout>
