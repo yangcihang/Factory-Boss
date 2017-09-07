@@ -33,8 +33,4 @@ public class UserUpdateRequest implements Serializable {
         this.mobile = mobile;
     }
 
-    public UserUpdateRequest(String name, String mobile) {
-        this.name = name;
-        this.mobile = mobile;
-    }
 }

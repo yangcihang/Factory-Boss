@@ -1,12 +1,10 @@
 package boss_android.transparent_factory.mine.activity;
 
-import android.app.Activity;
 import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import boss_android.transparent_factory.R;
-import boss_android.transparent_factory.account.model.Account;
 import boss_android.transparent_factory.base.activity.ToolbarActivity;
 import boss_android.transparent_factory.common.User;
 import boss_android.transparent_factory.mine.model.MineModelHelper;
@@ -42,8 +40,8 @@ public class UserDetailActivity extends ToolbarActivity {
     @Override
     protected void initView() {
         setActivityTitle("修改用户详情");
-        nameEdit.setHint(User.getName());
-        mobileEdit.setHint(User.getMobile());
+        nameEdit.setText(User.getName());
+        mobileEdit.setText(User.getMobile());
     }
 
     @Override
@@ -58,20 +56,20 @@ public class UserDetailActivity extends ToolbarActivity {
     public void onViewClicked() {
         name = nameEdit.getText().toString().trim();
         mobile = mobileEdit.getText().toString().trim();
-        if (TextUtils.isEmpty(name) && TextUtils.isEmpty(mobile)) {
+        if (name.equals(User.getName()) && mobile.equals(User.getMobile())) {
             this.finish();
             return;
         }
-        if (TextUtils.isEmpty(mobile)) {
-            mobile = User.getMobile();
-        }
-        if (TextUtils.isEmpty(name)) {
-            name = User.getName();
-        }
         if (!RegexUtil.checkMobile(mobile)) {
             ToastUtil.showToast(R.string.toast_mobile_error);
+        } else if (TextUtils.isEmpty(name)) {
+            ToastUtil.showToast(R.string.toast_user_name_empty);
         } else {
-            UserUpdateRequest request = new UserUpdateRequest(name, mobile);
+            UserUpdateRequest request = new UserUpdateRequest();
+            if (!mobile.equals(User.getMobile())) {
+                request.setMobile(mobile);
+            }
+            request.setName(name);
             MineModelHelper.updateUserInfo(request, this);
         }
     }

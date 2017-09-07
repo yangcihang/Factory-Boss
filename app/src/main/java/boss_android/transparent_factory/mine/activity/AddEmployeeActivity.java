@@ -16,6 +16,7 @@ import boss_android.transparent_factory.base.activity.ToolbarActivity;
 import boss_android.transparent_factory.common.KeyValue;
 import boss_android.transparent_factory.mine.model.AddEmployeeRequest;
 import boss_android.transparent_factory.mine.model.EmployeeModel;
+import boss_android.transparent_factory.mine.model.EmployeeUpdateRequest;
 import boss_android.transparent_factory.mine.model.MineModelHelper;
 import boss_android.transparent_factory.util.RegexUtil;
 import boss_android.transparent_factory.util.ToastUtil;
@@ -73,8 +74,8 @@ public class AddEmployeeActivity extends ToolbarActivity {
                 break;
             case TYPE_CHANGE:
                 setActivityTitle("修改经理账号");
-                nameEdit.setHint(employeeModel.getName());
-                mobileEdit.setHint(employeeModel.getMobile());
+                nameEdit.setText(employeeModel.getName());
+                mobileEdit.setText(employeeModel.getMobile());
 //                passwordEdit.setHint("请输入经理的密码");
                 break;
             default:
@@ -96,10 +97,16 @@ public class AddEmployeeActivity extends ToolbarActivity {
             case TYPE_ADD:
                 addEmployeeAccount();
                 break;
+            case TYPE_CHANGE:
+                changeEmployeeAccount();
+                break;
         }
 
     }
 
+    /**
+     * 添加经理账号
+     */
     private void addEmployeeAccount() {
         if (TextUtils.isEmpty(name)) {
             ToastUtil.showToast(R.string.toast_user_name_empty);
@@ -117,6 +124,27 @@ public class AddEmployeeActivity extends ToolbarActivity {
             AddEmployeeRequest request = new AddEmployeeRequest();
             request.setManagers(employeeModel);
             MineModelHelper.addEmployee(request, this);
+        }
+    }
+
+    /**
+     * 更新经理账号信息
+     */
+    private void changeEmployeeAccount() {
+        if (TextUtils.isEmpty(name)) {
+            ToastUtil.showToast(R.string.toast_user_name_empty);
+        } else if (!RegexUtil.checkMobile(mobile)) {
+            ToastUtil.showToast(R.string.toast_mobile_error);
+        } else if (password.length() < 6 || password.length() > 20) {
+            ToastUtil.showToast(R.string.toast_password_error);
+        } else {
+            EmployeeUpdateRequest model = new EmployeeUpdateRequest();
+            if (!mobile.equals(employeeModel.getMobile())) {
+                model.setMobile(mobile);
+            }
+            model.setPassword(password);
+            model.setName(name);
+            MineModelHelper.updateEmployeeInfo(model, String.valueOf(employeeModel.getId()), this);
         }
     }
 

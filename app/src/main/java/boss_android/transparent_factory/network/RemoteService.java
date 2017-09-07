@@ -10,6 +10,7 @@ import boss_android.transparent_factory.detail.model.ProcedureListResponse;
 import boss_android.transparent_factory.detail.model.ProcedureNumListResponse;
 import boss_android.transparent_factory.mine.model.AddEmployeeRequest;
 import boss_android.transparent_factory.mine.model.EmployeeModel;
+import boss_android.transparent_factory.mine.model.EmployeeUpdateRequest;
 import boss_android.transparent_factory.mine.model.PasswordModel;
 import boss_android.transparent_factory.mine.model.UserUpdateRequest;
 import boss_android.transparent_factory.order.model.OrderListResponse;
@@ -60,6 +61,12 @@ public interface RemoteService {
     @GET("managers")
     Call<RspModel<ArrayList<EmployeeModel>>> requestEmployeeList();
 
+    /**
+     * 添加经理账号
+     */
     @POST("admin/managers/create")
-    Call<RspModel> addManagerInfo(@Body AddEmployeeRequest manegers);
+    Call<RspModel> addManagerInfo(@Body AddEmployeeRequest managers);
+
+    @PUT("user/{id}")
+    Call<RspModel> updateEmployeeInfo(@Path("id") String id, @Body EmployeeUpdateRequest requestBody);
 }

@@ -15,6 +15,7 @@ import boss_android.transparent_factory.App;
 import boss_android.transparent_factory.R;
 import boss_android.transparent_factory.account.activity.LoginActivity;
 import boss_android.transparent_factory.base.fragment.BaseFragment;
+import boss_android.transparent_factory.common.User;
 import boss_android.transparent_factory.mine.activity.EmployeeAccountActivity;
 import boss_android.transparent_factory.mine.activity.UserDetailActivity;
 import boss_android.transparent_factory.mine.model.MineModelHelper;
@@ -60,6 +61,16 @@ public class MineFragment extends BaseFragment {
     @Override
     protected void loadData() {
 
+    }
+
+    /**
+     * 保证更改后能及时被修改
+     */
+    @Override
+    public void onResume() {
+        super.onResume();
+        mineUserNameTxt.setText(User.getName());
+        mineUserAccountTxt.setText(User.getMobile());
     }
 
     /**
