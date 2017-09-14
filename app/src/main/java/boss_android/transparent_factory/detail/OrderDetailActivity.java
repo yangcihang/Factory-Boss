@@ -84,14 +84,16 @@ public class OrderDetailActivity extends ToolbarActivity {
     @Override
     protected void initView() {
         setActivityTitle("订单详情");
+        procedureRec.setNestedScrollingEnabled(false);
         procedureRec.setLayoutManager(new LinearLayoutManager(this));
         procedureRec.setAdapter(adapter);
         if (contentModel != null) {
             detailOrderCustomTxt.setText(contentModel.getCustomerInfo());
-            detailOrderIdTxt.setText(contentModel.getOrderCode());
+            detailOrderIdTxt.setText("订单号：" + contentModel.getOrderCode());
             orderEndTimeTxt.setText(contentModel.getEndTime());
             orderCreateTimeTxt.setText(contentModel.getStartTime());
             detailOrderTitleTxt.setText(contentModel.getTitle());
+            // TODO: 17/9/8 设置中间文字状态
         }
     }
 
@@ -119,6 +121,8 @@ public class OrderDetailActivity extends ToolbarActivity {
         colors.add(Color.rgb(207, 180, 105));
         colors.add(Color.rgb(33, 33, 33));
         totalSet.setColors(colors);
+        totalSet.setValueTextSize(12);
+        totalSet.setValueTextColor(Color.WHITE);
         PieData pieData = new PieData(totalSet);
         orderTotalCompletionPieChart.setData(pieData);
         orderTotalCompletionPieChart.setCenterText("产能完成度");

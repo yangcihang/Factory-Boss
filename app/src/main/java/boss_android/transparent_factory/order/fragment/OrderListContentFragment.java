@@ -1,6 +1,5 @@
 package boss_android.transparent_factory.order.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -142,11 +141,13 @@ public class OrderListContentFragment extends BaseFragment {
         scrollListener.setScrolledToLastListener(new RecyclerScrollListener.OnScrolledToLast() {
             @Override
             public void onScrolledToLast(int position) {
-                if (!isLastPage) {
-                    adapter.setToRefresh(true);
-                    getDataSource();
-                } else {
-                    adapter.setToRefresh(false);
+                if (!swipeRefresh.isRefreshing()) {
+                    if (!isLastPage) {
+                        adapter.setToRefresh(true);
+                        getDataSource();
+                    } else {
+                        adapter.setToRefresh(false);
+                    }
                 }
             }
         });

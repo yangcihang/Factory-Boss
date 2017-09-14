@@ -155,7 +155,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                 public void run() {
                     progressDialog.dismiss();
                 }
-            });
+            }, 300);
         }
     }
 

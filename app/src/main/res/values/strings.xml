@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">透明工厂—老板端</string>
+    <string name="app_name">老板端</string>
     <string name="toast_net_work_error">网络错误</string>
     <string name="toast_unknow_error">未知错误</string>
     //底部导航栏文字

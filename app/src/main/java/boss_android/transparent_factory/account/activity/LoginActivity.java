@@ -1,6 +1,7 @@
 package boss_android.transparent_factory.account.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.Button;
@@ -44,6 +45,8 @@ public class LoginActivity extends NoBarActivity {
         accountEdit.addTextChangedListener(textWatcher);
         pswEdit.addTextChangedListener(textWatcher);
         loginBtn.setSelected(false);
+        loginBtn.setClickable(false);
+        loginBtn.setTextColor(getResources().getColor(R.color.secondary_text));
     }
 
     @Override
@@ -95,9 +98,11 @@ public class LoginActivity extends NoBarActivity {
             if (account.length() > 10 && psw.length() > 5) {
                 loginBtn.setSelected(true);
                 loginBtn.setClickable(true);
+                loginBtn.setTextColor(getResources().getColor(R.color.accent));
             } else {
                 loginBtn.setSelected(false);
                 loginBtn.setClickable(false);
+                loginBtn.setTextColor(getResources().getColor(R.color.secondary_text));
             }
         }
 

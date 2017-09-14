@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import boss_android.transparent_factory.R;
 import boss_android.transparent_factory.base.activity.ToolbarActivity;
@@ -102,9 +103,9 @@ public class ProcedureDetailActivity extends ToolbarActivity {
     private void initList() {
         adapter = new DetailProcedureListAdapter(this);
         GridLayoutManager layoutManager = new GridLayoutManager(this, 6);
+        procedureListRec.setAdapter(adapter);
         procedureListRec.setLayoutManager(layoutManager);
         procedureListRec.setNestedScrollingEnabled(false);
-        procedureListRec.setAdapter(adapter);
         procedureListRec.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL));
         procedureListRec.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
@@ -113,63 +114,67 @@ public class ProcedureDetailActivity extends ToolbarActivity {
      * 初始化图表
      */
     private void initChart(ProcedureNumListResponse response) {
-        Map<Long, Integer> chartModelMap = formatValue(response.getLogs()); //获取chart的model
-        int xSumCount = 0;//x轴的计数分布
-        int maxValue = 0;//y轴最大值(在数据项为1时使用)
-        final List<String> xValue = new ArrayList<>();//x轴值
-        List<Entry> lineEntries = new ArrayList<>();
-        XAxis xAxis = lineChart.getXAxis();
-        YAxis yAxis = lineChart.getAxisLeft();
-        for (Object o : chartModelMap.entrySet()) {
-            Map.Entry entry = (Map.Entry) o;
-            Long key = (Long) entry.getKey();
-            Integer value = (Integer) entry.getValue();
-            lineEntries.add(new Entry(xSumCount++, value));
-            xValue.add(TimeUtil.setStampToString(key, TimeUtil.TIME_DEFAULT_MONTH));
-            if (value > maxValue) {
-                maxValue = value;
-                if (chartModelMap.size() == 1)
-                    yAxis.setAxisMaximum(maxValue * 2);
-            }
-        }
-        LineDataSet dataSet = new LineDataSet(lineEntries, "产能进度");
-        dataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
-        dataSet.setColors(Color.rgb(207, 180, 105));
-        LineData lineData = new LineData(dataSet);
-        lineData.setValueTextSize(12);
-
-        yAxis.setAxisMinimum(0f);
-        xAxis.setAxisMinimum(0f);
-        xAxis.setLabelCount(chartModelMap.size());
-        xAxis.setDrawGridLines(false);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);//设置x轴的位置
-        IAxisValueFormatter formatter = new IAxisValueFormatter() {
-            @Override
-            public String getFormattedValue(float value, AxisBase axis) {
-                if (value >= 0 && value < xValue.size()) {
-                    int i = (int) value % xValue.size();
-                    return xValue.get(i);
-                } else {
-                    return "";
+        if (!response.getLogs().isEmpty()) {
+            Map<Long, Integer> chartModelMap = formatValue(response.getLogs()); //获取chart的model
+            int xSumCount = 0;//x轴的计数分布
+            int maxValue = 0;//y轴最大值(在数据项为1时使用)
+            final List<String> xValue = new ArrayList<>();//x轴值
+            List<Entry> lineEntries = new ArrayList<>();
+            XAxis xAxis = lineChart.getXAxis();
+            YAxis yAxis = lineChart.getAxisLeft();
+            for (Object o : chartModelMap.entrySet()) {
+                Map.Entry entry = (Map.Entry) o;
+                Long key = (Long) entry.getKey();
+                Integer value = (Integer) entry.getValue();
+                lineEntries.add(new Entry(xSumCount++, value));
+                xValue.add(TimeUtil.setStampToString(key, TimeUtil.TIME_DEFAULT_MONTH));
+                if (value > maxValue) {
+                    maxValue = value;
+                    if (chartModelMap.size() == 1)
+                        yAxis.setAxisMaximum(maxValue * 2);
                 }
             }
-        };
-        xAxis.setValueFormatter(formatter);
-        xAxis.setEnabled(true);
-        lineChart.setData(lineData);//装载数据
-        lineChart.setScaleXEnabled(false);
-        lineChart.getAxisRight().setEnabled(false);
-        lineChart.setDescription(null);
-        lineChart.animateX(1000);
-        lineChart.animateY(1000);
-        lineChart.invalidate();//刷新
+            LineDataSet dataSet = new LineDataSet(lineEntries, "产能进度");
+            dataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
+            dataSet.setColors(Color.rgb(207, 180, 105));
+            LineData lineData = new LineData(dataSet);
+            lineData.setValueTextSize(12);
+
+            yAxis.setAxisMinimum(0f);
+            xAxis.setAxisMinimum(-1f);
+            xAxis.setAxisMaximum(chartModelMap.size() + 1);
+            xAxis.setLabelCount(chartModelMap.size() + 1);
+            xAxis.setDrawGridLines(false);
+            xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);//设置x轴的位置
+            IAxisValueFormatter formatter = new IAxisValueFormatter() {
+                @Override
+                public String getFormattedValue(float value, AxisBase axis) {
+                    for (int i = 0; i < xValue.size(); i++) {
+                        if (value == i) {
+                            return xValue.get(i);
+                        }
+                    }
+                    return "";
+                }
+            };
+            xAxis.setValueFormatter(formatter);
+            xAxis.setEnabled(true);
+            lineChart.setData(lineData);//装载数据
+            lineChart.setScaleXEnabled(false);
+            lineChart.getAxisRight().setEnabled(false);
+            lineChart.setDescription(null);
+            lineChart.animateX(1000);
+            lineChart.animateY(1000);
+            lineChart.invalidate();//刷新
+        }
     }
 
     /**
      * 格式化得到的数据源
      */
     private Map<Long, Integer> formatValue(List<ProcedureNumModel> numModels) {
-        Map<Long, Integer> modelMap = new HashMap<>();
+        //使用treeMap，使得Key值升序
+        Map<Long, Integer> modelMap = new TreeMap<>();
         for (ProcedureNumModel model : numModels) {
             long timesTamp = TimeUtil.setStringToStamp(model.getCreatedAt(), TimeUtil.TIME_DEFAULT_MONTH);
             if (modelMap.get(timesTamp) != null) {

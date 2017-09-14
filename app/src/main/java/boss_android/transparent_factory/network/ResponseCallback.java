@@ -1,11 +1,10 @@
 package boss_android.transparent_factory.network;
 
-import android.support.annotation.StringRes;
 import android.text.TextUtils;
 
 import java.net.ConnectException;
 
-import boss_android.transparent_factory.R;
+import boss_android.transparent_factory.App;
 import boss_android.transparent_factory.network.convert.ResultException;
 import boss_android.transparent_factory.util.ToastUtil;
 import retrofit2.Call;
@@ -54,12 +53,13 @@ public class ResponseCallback<T> implements Callback<RspModel<T>> {
             if (TextUtils.isEmpty(((ResultException) t).getMsg())) {
                 GlobalAPIErrorHandler.handle(((ResultException) t).getCode());
             } else {
-                // TODO: 17/8/25 加入token过期的判断
+                if (((ResultException) t).getCode() == RspCode.ERROR_ACCOUNT_LOGIN) {
+                    App.getInstance().exitAccount();
+                }
                 ToastUtil.showToast(((ResultException) t).getMsg(), ((ResultException) t).getCode());
             }
             onDataCallback.onDataFailed(((ResultException) t).getCode());
         } else if (t instanceof ConnectException) {
-            // TODO: 17/8/21 网络连接错误,前者的toast做测试开发用
             ToastUtil.showToast(t.getMessage());
             //ToastUtil.showToast(R.string.toast_net_work_error);
             onDataCallback.onDataFailed(-1);

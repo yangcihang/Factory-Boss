@@ -91,10 +91,12 @@ public class HomeChartAdapter extends RecyclerFooterAdapter<OrderListModel> {
             totalEntries.add(new PieEntry(capacity * 100, "产能完成度"));
             totalEntries.add(new PieEntry(100 - capacity * 100, "产能未完成度"));
             PieDataSet totalSet = new PieDataSet(totalEntries, "");
-            ArrayList<Integer> colors = new ArrayList<Integer>();
+            ArrayList<Integer> colors = new ArrayList<>();
             colors.add(Color.rgb(207, 180, 105));
             colors.add(Color.rgb(33, 33, 33));
             totalSet.setColors(colors);
+            totalSet.setValueTextSize(12);
+            totalSet.setValueTextColor(Color.WHITE);
             PieData pieData = new PieData(totalSet);
             totalCompletionPieChart.setData(pieData);
             totalCompletionPieChart.invalidate();
@@ -109,6 +111,8 @@ public class HomeChartAdapter extends RecyclerFooterAdapter<OrderListModel> {
             ArrayList<Integer> colors = new ArrayList<>();
             colors.add(Color.rgb(207, 180, 105));
             colors.add(Color.rgb(33, 33, 33));
+            timeSet.setValueTextSize(12);
+            timeSet.setValueTextColor(Color.WHITE);
             timeSet.setColors(colors);
             PieData pieData = new PieData(timeSet);
             timeCompletionPieChart.setData(pieData);

@@ -1,15 +1,19 @@
 package boss_android.transparent_factory.order.adapter;
 
 import android.content.Context;
+import android.icu.math.BigDecimal;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 import boss_android.transparent_factory.R;
 import boss_android.transparent_factory.base.adapter.RecyclerFooterAdapter;
 import boss_android.transparent_factory.order.model.OrderListModel;
+import boss_android.transparent_factory.util.FloatUtil;
 import butterknife.BindView;
 
 /**
@@ -59,7 +63,7 @@ public class OrderListAdapter extends RecyclerFooterAdapter<OrderListModel> {
             titleTxt.setText(orderListModel.getTitle());
             customTxt.setText(orderListModel.getCustomerInfo());
             orderIdTxt.setText("订单号" + String.valueOf(orderListModel.getOrderCode()));
-            capacityTxt.setText(String.valueOf(orderListModel.getCapacity()));
+            capacityTxt.setText(String.valueOf(FloatUtil.getFloat(orderListModel.getCapacity(), 2) * 100) + "%");
             createTxt.setText(orderListModel.getCreatedAt());
             endTxt.setText(orderListModel.getEndTime());
             orderProgress.setProgress((int) (orderListModel.getCapacity() * 100));

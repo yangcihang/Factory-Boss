@@ -126,11 +126,13 @@ public class HomeFragment extends BaseFragment {
         scrollListener.setScrolledToLastListener(new RecyclerScrollListener.OnScrolledToLast() {
             @Override
             public void onScrolledToLast(int position) {
-                if (!isLastPage) {
-                    adapter.setToRefresh(true);
-                    getDataSource();
-                } else {
-                    adapter.setToRefresh(false);
+                if (!swipeRefresh.isRefreshing()) {
+                    if (!isLastPage) {
+                        adapter.setToRefresh(true);
+                        getDataSource();
+                    } else {
+                        adapter.setToRefresh(false);
+                    }
                 }
             }
         });

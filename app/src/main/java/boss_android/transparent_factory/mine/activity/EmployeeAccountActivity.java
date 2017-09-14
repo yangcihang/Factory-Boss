@@ -54,7 +54,6 @@ public class EmployeeAccountActivity extends ToolbarActivity {
 
     @Override
     protected void loadData() {
-        showProgressDialog(R.string.dialog_loading);
     }
 
     /**
@@ -63,6 +62,7 @@ public class EmployeeAccountActivity extends ToolbarActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        showProgressDialog(R.string.dialog_loading);
         MineModelHelper.requestEmployeeList(this);
     }
 
@@ -85,4 +85,6 @@ public class EmployeeAccountActivity extends ToolbarActivity {
     void onAddEmployee() {
         AddEmployeeActivity.start(this, AddEmployeeActivity.TYPE_ADD, null);
     }
+
+
 }

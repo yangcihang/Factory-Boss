@@ -2,13 +2,103 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/yang/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.0"
-        sha1="9e6a54a6e00276f63b62118ea6115f8518e0d498">
-        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8ec72c048cf4426280e5624ec730781e0f677208/classes.dex" />
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/retrofit-2.1.0_e0b7ed4ea17c6f85d48ce296f4694e48959d8ef3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/608737796d8b151f9f6c9ab7ee6e8d9d7977e322/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b2cb5e4ead4034da3903770c55334c257b874dbb">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_1296349240def7b7402434eb7bab265afc1f3d1d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/okio-1.8.0_4a21483089b9d61aea1904273cab0307febe7dd5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/d7e08a144dd15ae04431b2b2a47898a4cce476fe/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b543f604b3d66e8cbccc53e30bda7beab28a0e3d">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_ecf6e220b43d55eb92cbb2fced6390f14a8bee80.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.3.1/19047bdb6a4fc00a44124f64ca98e88fc204e7e3/okhttp-3.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="19047bdb6a4fc00a44124f64ca98e88fc204e7e3">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/okhttp-3.3.1_a12297635e7aa98b1672434dec228534de358d04.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.1.0/aa557d71ead91cbf26e0c316a0f593d168303309/converter-gson-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/converter-gson-2.1.0_eb2b1c6babf140741ea0e195d24fb0caf762face.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/4231308ca5c3d7e11c0efdcebeaae410bd205650/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_fd3dbc451ac06704d151e7b2851212622849ce85.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/819b0571536ab32d8047fd669efa2d2e0075f3a1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_7b5ce1d2b0b221720c9a214e3620781834f7e023.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/e8e4aaf653d65c4398a0af1f34d6e5ed4e395392/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_ca5daf1105b7ba5cef39194420af9adf01a853ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/14bf03556aed38648ffb2f07ae24faa65729f519/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="be587097e648eabfb7f9eca23ab03369894e2d5d">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_295dd56d89917443abb56aa6d2be89448118a196.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.2_88e0114d46bbb2799181d94e6bedba3897ff25d7.jar" />
     </item>
     <item
         is-multidex="true"
@@ -18,6 +108,195 @@
         revision="26.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_57bb77779967ffd0910288f3d90926c30823201f/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.0/14b8c877d98005ba3941c9257cfe09f6ed0e0d74/reactive-streams-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="14b8c877d98005ba3941c9257cfe09f6ed0e0d74">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/reactive-streams-1.0.0_ebbc20ef087efd8bcdee7cc091530ff183a13874.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/522f361df6a15065def21427d46a68175688f96e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="e51c2f662bb72419632af5192553c37e33890a99">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_3bdaef5df4775171636e847c25e64cc4f4c656a2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/822e992fd2fc4bfa39bc640226fd61f539bbff37/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_a089639f0aa19047d59449bb9fae8cbb2fde6db2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/cf5e041efac424c9357e086e87ec331a70b02365/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_610558629c7198247f4feac0f1ba7a144b4c2f3b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v3.0.2/5d4eb08a326bdbd7fbbddc769666898c9936b282/MPAndroidChart-v3.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="5d4eb08a326bdbd7fbbddc769666898c9936b282">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/MPAndroidChart-v3.0.2_70f318cec4ea8d06bedc335fc1cd11c3f21a1695.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/7e1be96e6a3704a3dedff6b39f4d301d668605fd/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_6a51f08657660407f3e90f7e11c6a20d944293c5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/logging-interceptor/3.3.1/99ce730034c6f5aaed710d1e0e9df95e8714ed5f/logging-interceptor-3.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="99ce730034c6f5aaed710d1e0e9df95e8714ed5f">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/logging-interceptor-3.3.1_d9ccedb0ec31dd6699fe6cd390656712c17619a1.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="6f87e64dc9f749dab07982219f95e8a22dd778a0">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8ec72c048cf4426280e5624ec730781e0f677208/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/efbf80e11090ff963465451b6ccdb9a0ac2cf696/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_40d88a9c15280937cb31872f40ad88561b01929d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/165bc937742375ff3b012ae20c5948938040a522/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_0ce0cdb19c0b7b16e5790a4e654a995ab0d5eb4a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/glide-3.7.0_b846df9e7cd650db73104035c1abb899b877472c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.6.0/48efa6f14074e1a6b16e02ac05eba3fc5c7c7ec8/butterknife-annotations-8.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="48efa6f14074e1a6b16e02ac05eba3fc5c7c7ec8">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/butterknife-annotations-8.6.0_a0ce408c6e289bdeb69b51232cadaf50ddd1fec9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/c45f12aca2730149a63228a9733ad631405b5f37/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="e1fa5e1123997a55e3ed65b44892993ff4b58cfe">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_2adc8f20d51bc859373606c9e729f95222148ce4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/f4a19ab41fbb2ddb8b8ba721d92431831fc2a544/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_f5bf4fa59ca611645bd91e1ecd14464a87f9d476.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/12ce8f737807d515ef425b190c2d4e943f638cac/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_8fd8a6b4c069ff4581061f0208cbf14f230a22cd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.0.5/4f1ac7ec0215e8f87ac80269baadc82878b87ed8/rxjava-2.0.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="4f1ac7ec0215e8f87ac80269baadc82878b87ed8">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/rxjava-2.0.5_b84e040a8d2a20bf1baafefe8e513e7a4d6acfcc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/f48431f75031de7d24a0484f3c77bfc8c78a68dd/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_b9bdde0e7f5991f9bef86411aba24023ce0549ae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/b49b3460f6895d08390902ac75ba290e8acbafdb/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_b7a1cbe9176531a191d572fe1a58c4ba57292400.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/gson-2.7_3fa0bacfba42a9afd6708abcd8926b9015add09f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/.android/build-cache/94520abcb7503ef95deff2745fd55c5c9feca2e5/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/classes_1fd5fd6536c43c2ed4ec72af58c4d70a4c6ac175.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yang/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/26.0.0-alpha1/support-annotations-26.0.0-alpha1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="/Users/yang/Desktop/AProject/hrsoft/Transparent-Factory/Boss_Android/app/build/intermediates/pre-dexed/debug/support-annotations-26.0.0-alpha1_392773dd38d2e04397bb6ae10d532376581b93c1.jar" />
     </item>
 
 </items>

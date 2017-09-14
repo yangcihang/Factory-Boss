@@ -17,7 +17,7 @@ public class RspCode {
     public static final int USER_NOT_EXIT = 30003;//用户不存在
     public static final int PASSWORD_ERROR = 30002;//密码错误
     public static final int ERROR_ACCOUNT_TOKEN = 20001;//用户token错误
-    public static final int ERROR_ACCOUNT_LOGIN = 20002;//用户登录错误
+    public static final int ERROR_ACCOUNT_LOGIN = 20004;//用户登录错误
     public static final int ERROR_ACCOUNT_REGISTER = 20003;//用户注册错误
 
     public static final int ERROR_ACCOUNT_NO_PERMISSION = 2010;//用户无权限

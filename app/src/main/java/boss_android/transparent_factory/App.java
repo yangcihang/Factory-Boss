@@ -126,5 +126,8 @@ public class App extends Application {
     public void exitAccount() {
         User.exitLogin(this);
         removeAllActivity();
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }

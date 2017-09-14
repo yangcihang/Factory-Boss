@@ -1,9 +1,11 @@
 package boss_android.transparent_factory.account.model;
 
 import boss_android.transparent_factory.account.activity.LoginActivity;
+import boss_android.transparent_factory.common.Config;
 import boss_android.transparent_factory.common.User;
 import boss_android.transparent_factory.network.NetWork;
 import boss_android.transparent_factory.network.ResponseCallback;
+import boss_android.transparent_factory.util.ToastUtil;
 
 /**
  * @author YangCihang
@@ -21,12 +23,19 @@ public class AccountHelper {
             public void onDataSuccess(Object data) {
                 LoginResponse response = (LoginResponse) data;
                 Account user = response.getUser();
-                User.login(user, response.getToken());
-                callback.onLoginSuccess();
+                if (user.getRole().equals(Account.BOSS)) {
+                    User.login(user, response.getToken());
+                    callback.onLoginSuccess();
+                } else {
+                    onDataFailed(Config.FLAG_ROLE);
+                }
             }
 
             @Override
             public void onDataFailed(int errorCode) {
+                if (errorCode == Config.FLAG_ROLE) {
+                    ToastUtil.showToast("登录权限错误");
+                }
                 callback.onLoginFailed();
             }
         }));

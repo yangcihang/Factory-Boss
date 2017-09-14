@@ -123,6 +123,7 @@ public class AddEmployeeActivity extends ToolbarActivity {
             employeeModel.add(model);
             AddEmployeeRequest request = new AddEmployeeRequest();
             request.setManagers(employeeModel);
+            showProgressDialog(R.string.dialog_loading);
             MineModelHelper.addEmployee(request, this);
         }
     }
@@ -152,7 +153,7 @@ public class AddEmployeeActivity extends ToolbarActivity {
      * 数据加载成功时
      */
     public void onDataLoadedSuccess() {
-        ToastUtil.showToast(R.string.toast_user_updata_success);
+        ToastUtil.showToast("操作成功");
         this.finish();
     }
 

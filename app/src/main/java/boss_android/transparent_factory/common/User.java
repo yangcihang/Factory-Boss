@@ -26,7 +26,7 @@ public class User {
     private static final String KEY_EMAIL = "KEY_EMAIL";
 
 
-    private static String token; // 登录状态的Token，用来接口请求
+    private static String token = ""; // 登录状态的Token，用来接口请求
     private static String mobile;// 登录的账户(手机号)
     private static int sex; //用户性别
     private static int id; //用户id
