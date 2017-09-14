@@ -19,5 +19,6 @@
     <string name="toast_mobile_error">手机号格式不正确</string>
     <string name="toast_password_error">请输入6-20位密码</string>
     <string name="toast_user_name_empty">用户名不能为空</string>
+    <string name="toast_service_error">服务器错误</string>
 
 </resources>

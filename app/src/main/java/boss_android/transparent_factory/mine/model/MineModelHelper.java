@@ -72,7 +72,7 @@ public class MineModelHelper {
      * 更新经理信息
      */
     public static void updateEmployeeInfo(EmployeeUpdateRequest request, String id, final AddEmployeeActivity callback) {
-        NetWork.getService().updateEmployeeInfo(String.valueOf(User.getId()), request).enqueue(new ResponseCallback(new ResponseCallback.DataCallback() {
+        NetWork.getService().updateEmployeeInfo(String.valueOf(id), request).enqueue(new ResponseCallback(new ResponseCallback.DataCallback() {
             @Override
             public void onDataSuccess(Object data) {
                 callback.onDataLoadedSuccess();

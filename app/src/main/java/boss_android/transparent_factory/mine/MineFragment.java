@@ -36,7 +36,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MineFragment extends BaseFragment {
     //    @BindView(R.id.rl_mine_change_mobile) RelativeLayout mineChangeMobileRl;
     @BindView(R.id.rl_mine_quit_account) RelativeLayout toAccount;
-    @BindView(R.id.img_user_avatar) CircleImageView userAvatarImg;
     @BindView(R.id.txt_mine_user_name) TextView mineUserNameTxt;
     @BindView(R.id.txt_mine_user_account) TextView mineUserAccountTxt;
     @BindView(R.id.rl_mine_my_account) RelativeLayout mineMyAccountRl;

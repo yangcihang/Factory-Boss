@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import java.net.ConnectException;
 
 import boss_android.transparent_factory.App;
+import boss_android.transparent_factory.R;
 import boss_android.transparent_factory.network.convert.ResultException;
 import boss_android.transparent_factory.util.ToastUtil;
 import retrofit2.Call;
@@ -31,17 +32,12 @@ public class ResponseCallback<T> implements Callback<RspModel<T>> {
     public void onResponse(Call<RspModel<T>> call, Response<RspModel<T>> response) {
         //前两句在Converter中已判断，在次做二次判断,所以以下的else都在failure中执行
         if (response.raw().code() <= HttpStateCode.REQUEST_SUCCESS) {
-            if (response.body().getCode() == RspCode.SUCCEED) {
-                if (onDataCallback != null) {
-                    onDataCallback.onDataSuccess(response.body().getData());
-                }
-            } else {
-                GlobalAPIErrorHandler.handle(response.body().getCode());
-                onDataCallback.onDataFailed(response.body().getCode());
-            }
+            onDataCallback.onDataSuccess(response.body().getData());
+        } else if (response.code() == RspCode.ERROR_SERVICE) {
+            ToastUtil.showToast(R.string.toast_service_error);
+            onDataCallback.onDataFailed(-1);
         } else {
-            onDataCallback.onDataFailed(response.raw().code());
-            GlobalAPIErrorHandler.handle(response.raw().code());
+            onDataCallback.onDataFailed(-1);
         }
     }
 
@@ -60,12 +56,10 @@ public class ResponseCallback<T> implements Callback<RspModel<T>> {
             }
             onDataCallback.onDataFailed(((ResultException) t).getCode());
         } else if (t instanceof ConnectException) {
-            ToastUtil.showToast(t.getMessage());
-            //ToastUtil.showToast(R.string.toast_net_work_error);
+            ToastUtil.showToast(R.string.toast_net_work_error);
             onDataCallback.onDataFailed(-1);
         } else {
-            ToastUtil.showToast(t.getMessage());
-            //ToastUtil.showToast(R.string.toast_unknow_error);
+            ToastUtil.showToast(R.string.toast_unknow_error);
             onDataCallback.onDataFailed(-1);
         }
     }

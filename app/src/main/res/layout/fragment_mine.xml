@@ -19,21 +19,24 @@
         android:background="@color/primary_dark"
         android:orientation="vertical">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/img_user_avatar"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+
+        <TextView
+            android:id="@+id/txt_mine_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
-            android:background="@mipmap/ic_launcher"/>
+            android:text="老板"
+            android:textColor="@color/accent"
+            android:textSize="@dimen/title_text"/>
 
         <TextView
             android:id="@+id/txt_mine_user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/img_user_avatar"
+            android:layout_below="@id/txt_mine_head"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="24dp"
             android:gravity="center"
             android:text="刘明好"
             android:textColor="@color/accent"
@@ -49,6 +52,7 @@
             android:text="账号：15028595851"
             android:textColor="@color/accent"
             android:textSize="@dimen/primary_text"/>
+
     </RelativeLayout>
 
     <RelativeLayout

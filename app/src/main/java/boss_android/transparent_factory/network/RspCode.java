@@ -13,7 +13,7 @@ public class RspCode {
     public static final int ERROR_PARAMETERS = 4001;//参数错误
     public static final int ERROR_PARAMETERS_EXIST_ACCOUNT = 4002;//用户已存在
 
-    public static final int ERROR_SERVICE = 5001;//服务器错误
+    public static final int ERROR_SERVICE = 500;//服务器错误
     public static final int USER_NOT_EXIT = 30003;//用户不存在
     public static final int PASSWORD_ERROR = 30002;//密码错误
     public static final int ERROR_ACCOUNT_TOKEN = 20001;//用户token错误

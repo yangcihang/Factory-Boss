@@ -4,10 +4,8 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="这是启动页面"
-        android:gravity="center"
-        android:textSize="50sp"/>
+        android:background="@drawable/ic_splash"/>
 </LinearLayout>

@@ -145,6 +145,7 @@ public class AddEmployeeActivity extends ToolbarActivity {
             }
             model.setPassword(password);
             model.setName(name);
+            showProgressDialog(R.string.dialog_loading);
             MineModelHelper.updateEmployeeInfo(model, String.valueOf(employeeModel.getId()), this);
         }
     }
@@ -153,6 +154,7 @@ public class AddEmployeeActivity extends ToolbarActivity {
      * 数据加载成功时
      */
     public void onDataLoadedSuccess() {
+        disMissProgressDialog();
         ToastUtil.showToast("操作成功");
         this.finish();
     }
@@ -161,6 +163,7 @@ public class AddEmployeeActivity extends ToolbarActivity {
      * 数据加载失败时
      */
     public void onDataLoadedFailed() {
-
+        ToastUtil.showToast("修改失败");
+        disMissProgressDialog();
     }
 }
