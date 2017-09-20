@@ -52,7 +52,7 @@ public class ResponseCallback<T> implements Callback<RspModel<T>> {
                 if (((ResultException) t).getCode() == RspCode.ERROR_ACCOUNT_LOGIN) {
                     App.getInstance().exitAccount();
                 }
-                ToastUtil.showToast(((ResultException) t).getMsg(), ((ResultException) t).getCode());
+                ToastUtil.showToast(((ResultException) t).getMsg());
             }
             onDataCallback.onDataFailed(((ResultException) t).getCode());
         } else if (t instanceof ConnectException) {

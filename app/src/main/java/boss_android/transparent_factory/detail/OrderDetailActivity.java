@@ -24,6 +24,7 @@ import boss_android.transparent_factory.detail.adapter.DetailProcedureAdapter;
 import boss_android.transparent_factory.detail.model.ProcedureModel;
 import boss_android.transparent_factory.detail.model.ProcedureModelHelper;
 import boss_android.transparent_factory.order.model.OrderListModel;
+import boss_android.transparent_factory.util.TimeUtil;
 import boss_android.transparent_factory.util.ToastUtil;
 import butterknife.BindView;
 
@@ -90,8 +91,12 @@ public class OrderDetailActivity extends ToolbarActivity {
         if (contentModel != null) {
             detailOrderCustomTxt.setText(contentModel.getCustomerInfo());
             detailOrderIdTxt.setText("订单号：" + contentModel.getOrderCode());
-            orderEndTimeTxt.setText(contentModel.getEndTime());
-            orderCreateTimeTxt.setText(contentModel.getStartTime());
+            orderCreateTimeTxt.setText(TimeUtil.setStampToString(TimeUtil.setStringToStamp
+                            (contentModel.getCreatedAt(), TimeUtil.DATE_DEFAULT_FORMAT),
+                    TimeUtil.DATE_DEFAULT_FORMAT));
+            orderEndTimeTxt.setText(TimeUtil.setStampToString(TimeUtil.setStringToStamp
+                            (contentModel.getEndTime(), TimeUtil.DATE_DEFAULT_FORMAT),
+                    TimeUtil.DATE_DEFAULT_FORMAT));
             detailOrderTitleTxt.setText(contentModel.getTitle());
             // TODO: 17/9/8 设置中间文字状态
         }

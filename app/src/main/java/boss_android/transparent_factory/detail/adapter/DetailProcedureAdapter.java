@@ -9,6 +9,7 @@ import android.widget.TextView;
 import boss_android.transparent_factory.R;
 import boss_android.transparent_factory.base.adapter.RecyclerViewAdapter;
 import boss_android.transparent_factory.detail.model.ProcedureModel;
+import boss_android.transparent_factory.util.TimeUtil;
 import butterknife.BindView;
 
 /**
@@ -53,8 +54,12 @@ public class DetailProcedureAdapter extends RecyclerViewAdapter<ProcedureModel> 
             procedureProcessingTxt.setText(String.valueOf((int) successCount) + "/" +
                     String.valueOf((int) totalCount));
             detailProcedureProgress.setProgress(progress);
-            createTimeTxt.setText(procedureModel.getCreatedAt());
-            endTimeTxt.setText(procedureModel.getEndTime());
+            createTimeTxt.setText(TimeUtil.setStampToString(TimeUtil.setStringToStamp
+                            (procedureModel.getCreatedAt(), TimeUtil.DATE_DEFAULT_FORMAT),
+                    TimeUtil.DATE_DEFAULT_FORMAT));
+            endTimeTxt.setText(TimeUtil.setStampToString(TimeUtil.setStringToStamp
+                            (procedureModel.getEndTime(), TimeUtil.DATE_DEFAULT_FORMAT),
+                    TimeUtil.DATE_DEFAULT_FORMAT));
         }
     }
 }

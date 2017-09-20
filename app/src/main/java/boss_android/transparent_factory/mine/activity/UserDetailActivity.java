@@ -70,6 +70,7 @@ public class UserDetailActivity extends ToolbarActivity {
                 request.setMobile(mobile);
             }
             request.setName(name);
+            showProgressDialog(R.string.dialog_loading);
             MineModelHelper.updateUserInfo(request, this);
         }
     }
@@ -78,15 +79,18 @@ public class UserDetailActivity extends ToolbarActivity {
      * 数据加载成功时候
      */
     public void onDataLoadedSuccess() {
+        disMissProgressDialog();
         ToastUtil.showToast(R.string.toast_user_updata_success);
         User.setMobile(mobile);
         User.setName(name);
         finish();
+        int a[] = {1, 2, 3};
     }
 
     /**
      * 数据加载失败时
      */
     public void onDataLoadedFailed() {
+        disMissProgressDialog();
     }
 }

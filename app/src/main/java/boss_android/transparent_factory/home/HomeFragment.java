@@ -93,7 +93,6 @@ public class HomeFragment extends BaseFragment {
         }
         swipeRefresh.setRefreshing(false);
         adapter.setToRefresh(false);
-        adapter.setToRefresh(false);
     }
 
     /**
@@ -137,5 +136,4 @@ public class HomeFragment extends BaseFragment {
             }
         });
     }
-
 }

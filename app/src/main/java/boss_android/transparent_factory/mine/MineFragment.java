@@ -76,6 +76,7 @@ public class MineFragment extends BaseFragment {
      * 数据加载成功时回调
      */
     public void onDataLoadedSuccess() {
+        disMissProgressDialog();
         ToastUtil.showToast(R.string.toast_user_updata_success);
     }
 
@@ -122,6 +123,7 @@ public class MineFragment extends BaseFragment {
                             // TODO: 17/9/6 加入中文字符的判断
                             ToastUtil.showToast(R.string.toast_password_error);
                         } else {
+                            showProgressDialog(R.string.dialog_loading);
                             MineModelHelper.updatePassword(password, MineFragment.this);
                         }
                     }

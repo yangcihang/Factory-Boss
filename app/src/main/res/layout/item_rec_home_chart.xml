@@ -13,11 +13,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="@dimen/margin_order_left_right"
-        android:paddingRight="@dimen/margin_order_left_right"
         android:paddingTop="@dimen/margin_order_item_top_bottom">
 
         <TextView
+            android:paddingLeft="@dimen/margin_order_left_right"
             android:id="@+id/txt_home_order_custom_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,6 +33,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:text="订单号:31231312"
+            android:paddingRight="@dimen/margin_order_left_right"
             android:textColor="@color/primary_text"
             android:textSize="@dimen/secondary_text"/>
 
@@ -60,6 +60,7 @@
             android:textSize="@dimen/primary_text"/>
 
         <TextView
+            android:paddingLeft="@dimen/margin_order_left_right"
             android:id="@+id/txt_home_order_create_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,6 +72,7 @@
         <TextView
             android:id="@+id/txt_home_order_end_time"
             android:layout_width="wrap_content"
+            android:paddingRight="@dimen/margin_order_left_right"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@id/txt_home_center_title"

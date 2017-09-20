@@ -66,8 +66,13 @@ public class HomeChartAdapter extends RecyclerFooterAdapter<OrderListModel> {
 
         @Override
         protected void onBind(OrderListModel orderListModel, int position) {
-            createTimeTxt.setText(orderListModel.getCreatedAt());
-            endTimeTxt.setText(orderListModel.getEndTime());
+            createTimeTxt.setText(TimeUtil.setStampToString(TimeUtil.setStringToStamp
+                            (orderListModel.getCreatedAt(), TimeUtil.DATE_DEFAULT_FORMAT),
+                    TimeUtil.DATE_DEFAULT_FORMAT));
+            endTimeTxt.setText(TimeUtil.setStampToString(TimeUtil.setStringToStamp
+                            (orderListModel.getEndTime(), TimeUtil.DATE_DEFAULT_FORMAT),
+                    TimeUtil.DATE_DEFAULT_FORMAT));
+
             customTxt.setText(orderListModel.getCustomerInfo());
             titleTxt.setText(orderListModel.getTitle());
             orderIdTxt.setText(orderListModel.getOrderCode());

@@ -20,7 +20,7 @@ public final class Config {
     /**
      * APP Server 网络请求BaseUrl
      */
-    public static final String BASE_URL = "http://192.168.0.108:3010/";
+    public static final String BASE_URL = "http://factory.hrsoft.net/";
 
     /**
      * APP Server 网络请求连接超时时间，单位：s

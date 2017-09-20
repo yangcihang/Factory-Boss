@@ -14,6 +14,7 @@ import boss_android.transparent_factory.R;
 import boss_android.transparent_factory.base.adapter.RecyclerFooterAdapter;
 import boss_android.transparent_factory.order.model.OrderListModel;
 import boss_android.transparent_factory.util.FloatUtil;
+import boss_android.transparent_factory.util.TimeUtil;
 import butterknife.BindView;
 
 /**
@@ -64,8 +65,12 @@ public class OrderListAdapter extends RecyclerFooterAdapter<OrderListModel> {
             customTxt.setText(orderListModel.getCustomerInfo());
             orderIdTxt.setText("订单号" + String.valueOf(orderListModel.getOrderCode()));
             capacityTxt.setText(String.valueOf(FloatUtil.getFloat(orderListModel.getCapacity(), 2) * 100) + "%");
-            createTxt.setText(orderListModel.getCreatedAt());
-            endTxt.setText(orderListModel.getEndTime());
+            createTxt.setText(TimeUtil.setStampToString(TimeUtil.setStringToStamp
+                            (orderListModel.getCreatedAt(), TimeUtil.DATE_DEFAULT_FORMAT),
+                    TimeUtil.DATE_DEFAULT_FORMAT));
+            endTxt.setText(TimeUtil.setStampToString(TimeUtil.setStringToStamp
+                            (orderListModel.getEndTime(), TimeUtil.DATE_DEFAULT_FORMAT),
+                    TimeUtil.DATE_DEFAULT_FORMAT));
             orderProgress.setProgress((int) (orderListModel.getCapacity() * 100));
         }
     }
